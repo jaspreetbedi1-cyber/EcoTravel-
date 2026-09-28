@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description>Allows Travel Group members to process and complete travel fulfillment tasks.</description>
+        <elevated_privilege>false</elevated_privilege>
+        <federated_id>qBi/qLGLHGsshFiOTzI55ziRD2u84bEyxMWNTBeD9p0=</federated_id>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_2058698_ecotra_0.ecotravel_fulfiller</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>ecotravel_fulfiller</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-17 14:20:59</sys_created_on>
+        <sys_id>dd97fc03c317031092bd3adc05013155</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_2058698_ecotra_0.ecotravel_fulfiller</sys_name>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name>sys_user_role_dd97fc03c317031092bd3adc05013155</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-17 14:20:59</sys_updated_on>
+    </sys_user_role>
+</record_update>

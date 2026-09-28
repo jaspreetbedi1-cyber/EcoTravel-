@@ -1,0 +1,1355 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=91848000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Automatically process EcoTravel requests, determine Standard or NSSR classification, calculate system fields, manage approvals, and update request status.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>ecotravel_request_processing</internal_name>
+        <label_cache>[{"name":"d6014bc7-9f9f-49c0-8c10-41b17b3389b8.approval_state","label":"10 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"57647ef7-efe1-49d9-be22-ce055d4dbe81":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current.transport_mod0","label":"Trigger - Record Created➛EcoTravel Request Record➛Transport mode","reference":"","reference_display":"Transport mode","type":"choice","base_type":"choice","parent_table_name":"x_2058698_ecotra_0_ecotravel_request","column_name":"transport_mod0","choices":[{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Train"}},"sequence":0.0,"label":"Train","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Train","missing":false,"value":"train"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Flight"}},"sequence":1.0,"label":"Flight","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Flight","missing":false,"value":"flight"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Electric Vehicle"}},"sequence":2.0,"label":"Electric Vehicle","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Electric Vehicle","missing":false,"value":"car"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Pool Car (non EV)"}},"sequence":3.0,"label":"Pool Car (non EV)","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Pool Car (non EV)","missing":false,"value":"other"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Taxi"}},"sequence":4.0,"label":"Taxi","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Taxi","missing":false,"value":"taxi"}],"usedInstances":{"012f9f4e-7240-41a3-bd4c-50d827feaeb4":["condition"],"df41dd92-723b-4caf-b8ad-32849ad90c40":["condition"]}},{"name":"Created_1.current.requested_for.manager","label":"Trigger - Record Created➛EcoTravel Request Record➛Requested for➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","choices":[{"order":0.0}],"usedInstances":{"d6014bc7-9f9f-49c0-8c10-41b17b3389b8":["approval_conditions"]}},{"name":"Created_1.current.taxi_class","label":"Trigger - Record Created➛EcoTravel Request Record➛Taxi Class","reference":"","reference_display":"Taxi Class","type":"choice","base_type":"choice","parent_table_name":"x_2058698_ecotra_0_ecotravel_request","column_name":"taxi_class","choices":[{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Uber"}},"sequence":0.0,"label":"Uber","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Uber","missing":false,"value":"uber"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Taxi"}},"sequence":1.0,"label":"Taxi","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Taxi","missing":false,"value":"taxi"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Black Taxi (with chauffeur)"}},"sequence":2.0,"label":"Black Taxi (with chauffeur)","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Black Taxi (with chauffeur)","missing":false,"value":"black_taxi_with_chauffeur"}],"usedInstances":{"699321f9-eaf3-40b4-8f9c-2602c0377f92":["condition"]}},{"name":"Created_1.current","label":"Trigger - Record Created➛EcoTravel Request Record","reference":"x_2058698_ecotra_0_ecotravel_request","reference_display":"EcoTravel Request","type":"reference","base_type":"reference","usedInstances":{"ff72e646-2f6c-4518-a56e-08637223c4f7":["record"],"58a9e3ee-9030-4a55-9b68-bac2134e7be6":["record"],"d6014bc7-9f9f-49c0-8c10-41b17b3389b8":["record"],"5459b8c1-fea2-464b-8ef1-e79ba22429dc":["ecotravel_request_record"],"2962cb5b-550e-4606-a076-afa5f09a83e8":["record"],"c6ea8e32-d378-42e1-a6b4-dc7770d6c1d0":["record"],"1c2b0ad8-de86-4d65-9520-d1e5794f358e":["record"],"9151ee4b-9abd-48fc-bfb6-d6165fb4e7ec":["record"],"094baba4-c439-45ae-ab3d-204bb395487e":["ecotravel_request_record"],"20890ae7-dc85-49a8-ba22-66356e84548f":["record"],"6af5766d-cf99-492e-924e-81a3a60912d4":["ecotravel_request_record"],"78d44202-5251-4bb2-b7fb-b92c3240377c":["ecotravel_request_record"],"20c1f0ae-9e82-4b11-8d0f-b4f3371762e0":["record"],"94a5f23c-739c-4838-bd78-fee251067cd5":["record"]},"attributes":{}}]</label_cache>
+        <master_snapshot>1da2ef4dc367835092bd3adc0501313d</master_snapshot>
+        <master_snapshot_digest/>
+        <name>EcoTravel Request Processing</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>de5fafc9c3e7835092bd3adc0501318f</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 07:20:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a9f09a70c36bcf1092bd3adc05013104</sys_id>
+        <sys_mod_count>93</sys_mod_count>
+        <sys_name>EcoTravel Request Processing</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name>sys_hub_flow_a9f09a70c36bcf1092bd3adc05013104</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>7916b70dc32b835092bd3adc050131aa</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=a9f09a70c36bcf1092bd3adc05013104"/>
+    <sys_variable_value action="delete_multiple" query="document_key=a9f09a70c36bcf1092bd3adc05013104"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_2058698_ecotra_0_ecotravel_request">^EQ<item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>false</on_update>
+        <published_version/>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 08:51:42</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>de5fafc9c3e7835092bd3adc0501318f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:42</sys_updated_on>
+        <table>x_2058698_ecotra_0_ecotravel_request</table>
+        <trigger_definition/>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>a9f09a70c36bcf1092bd3adc05013104</identifier>
+        <identifier_type>flow</identifier_type>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 08:51:42</sys_created_on>
+        <sys_id>165fafc9c3e7835092bd3adc05013191</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:42</sys_updated_on>
+        <trigger display_value="">de5fafc9c3e7835092bd3adc0501318f</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=a9f09a70c36bcf1092bd3adc05013104^sys_idNOT IN165fafc9c3e7835092bd3adc05013191"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=a9f09a70c36bcf1092bd3adc05013104"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=a9f09a70c36bcf1092bd3adc05013104^sys_idNOT INedf056b0c36bcf1092bd3adc050131be"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>a9f09a70c36bcf1092bd3adc05013104</id>
+        <name>EcoTravel Request Processing</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 07:20:50</sys_created_on>
+        <sys_id>edf056b0c36bcf1092bd3adc050131be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-23 07:20:50</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=edf056b0c36bcf1092bd3adc050131be"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=a9f09a70c36bcf1092bd3adc05013104^sys_idNOT IN86319ab0c36bcf1092bd3adc0501318b,ee31deb0c36bcf1092bd3adc050131aa"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</model>
+        <model_id>a9f09a70c36bcf1092bd3adc05013104</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_a9f09a70c36bcf1092bd3adc05013104</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 07:21:59</sys_created_on>
+        <sys_id>86319ab0c36bcf1092bd3adc0501318b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-23 08:22:19</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=86319ab0c36bcf1092bd3adc0501318b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</model>
+        <model_id>a9f09a70c36bcf1092bd3adc05013104</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_a9f09a70c36bcf1092bd3adc05013104</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 07:22:00</sys_created_on>
+        <sys_id>ee31deb0c36bcf1092bd3adc050131aa</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-23 08:22:19</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=ee31deb0c36bcf1092bd3adc050131aa"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=a9f09a70c36bcf1092bd3adc05013104"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a9f09a70c36bcf1092bd3adc05013104"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=a9f09a70c36bcf1092bd3adc05013104^sys_idNOT IN9c6116f0c36bcf1092bd3adc050131d4"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <generation_source/>
+        <name>Created</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 07:22:40</sys_created_on>
+        <sys_id>9c6116f0c36bcf1092bd3adc050131d4</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-23 14:17:09</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VYW2/bNhT+K4KeNiAFdPE1b13iYgG6BrPd7SHIBEoibWI06VKUErfIf9+hLrasi2PHduc8tSYp8jsfv/Odwzz8MBnyMTOvzSnyGTavTMoVlhyx6WqJYVjpYY+jhZ5bIB4iJeTKvFYyxlcmkWIxxYslQwoWE8QiGBQyxNK8tq/MBLEYT1bRXQg7wffpNvmeZj4Nv589x+oOesOBhwOhJPKs/D8JZp7E32IcKVge0ggOWv2VfzUKxDRdYozXS4I5ZaHE3Lx+eLwyl0jCgUqD+VGZohpRQAI0dLAVuLbrOJblDDq233N92wldhC0LNqyyU4lANZC0CR8/K8xDHK6ZqfEnMQrvOVutV8yB/oyrBXqO6HfYfWDpdQQD9gBnc+ufXs5JNhzMBQ3w/VJRwbORDGc2KVi84F8y/JpNTFDMVMEmjMQR7IeXGrIGkSMik7l4GhcHfqI8jS6fZCJAbP0LKSWpHyscacIJZUC9l3ETiVim6Mejm/vxrff3x+nN76OxNx5NpuO7m+no1nxJ4/K+xXrHDGGOxcvCeVlL4BPFTF8gWi6lABXB4iiQdKk+BoomhRJfrjbqvhE8pCkvNYUHxVS0rfAi/l0St6xWkQelEwuh/zP6s67jbPAw5fZ6CIUYtSjXJyXlliNvgKYaSChHt0vD+cg+Iu5Y1v8k49yo3qriJ8RV5CnhoTD0SixB0sPGOkQRYna7OQ/G6WwGwqd8GavoVVlnsb28qmAZc/jAW99HXccpbWv+PlNwxOsHyMOJtseU9A9gSqSgKsdPPucHjGNuCG4EsQSOlAHXbBSHGSlILQ1yt0CznGjYmOFAlbRBvkblX3/QKKJ8VgqmDUu6oA6GrcqICtM9BsPjKVO8fiVJJZ5Kqh+c57ZNiI+JY/V1ltuW6xPb6ltdRELXsgKnlOd1MK0oVUUwZ8n3w7I9SqXK9rj9KsU5eKucK3tJOdnOg4IELZHcVG5OA80+ETRHQ6uYo3uQO65lmQ3fbqtzV2gn7g1QmCD4Iixi3Kf27+GPhIkn8N3jvZEIiWdSxDysmpI+wqDw79aK87iij4J/d6PYrDB+yS/110tzyM2lFLJGfHUCb3SJ7Q9xB1tgiS64od8dDv0AOYT0e33s2BVv3MBoxPYuPPGVa0+adNPmj41CTpr0f4AzHgGw5pIHAzzeH3NhNrpjNvc+fPBpjrkHUKXHaPourtjhjNEQF3Onzfba0ckmv4/NeDIYBl273w/68OKBjCcd7CO743TRsN9zB91Kxteg7IKpGpj5Ke+gaBWlQFrc4Gs2dVlP+3PKNsJK6XJ0dA1PP0fZeaXyqW/ISP1FSEOza9xtFhoTDMUwfRifq6YLNa9Vc0DyG4xvIdGd4RfBPzSgO+NDjMNLYR/iWpBdWu9RUVSyfQlHv85wZ9AdErfZj8iwyY82YNphXnwvsqcUklZRNTUl+yZm0pjfrV3EG3KrIpNye7Gj/zkVKfbJSXHOR4p7dM9V5GLrk/QtYN9RvUubkJMVPcGxJ0ijbVNi5H+axKHhrww1x8Atgy4bTjY0jDPWlax7rlU9GDby5udsBU3fSZWUW2HAhCF/Ci3nqWoV3Zz2bY3DPup23ZZOe1h9WzcBegXvxde4gyWSNCluZ6E7bN/qno2lrpRQ24rYs4idNOrmSnZc1I217LWoj69Su/4y0IDiQuvP439fh3IW8B8AAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=a9f09a70c36bcf1092bd3adc05013104^sys_idNOT IN05191234c3abcf1092bd3adc050131c9,43ba5ef4c3abcf1092bd3adc050131f1,5ae53fc9c32b835092bd3adc050131bd,7a86dabcc36bcf1092bd3adc05013137,a8c73770c3e7035092bd3adc05013122,c04d567cc3abcf1092bd3adc0501311d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>699321f9-eaf3-40b4-8f9c-2602c0377f92</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 07:56:19</sys_created_on>
+        <sys_id>05191234c3abcf1092bd3adc050131c9</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>58a9e3ee-9030-4a55-9b68-bac2134e7be6</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UUW/aMBD+KyjPLEoIIOCtGkPaw1qJVX3pWsuxD2rNsVPboTDEf985cYC1a4UqpmnSeED4fP7u++6+43YbCR5Noj7wJB2nQ5alWdZLkt6on+bDLE97PKMAadSNFC0AMw0wbTieV1RWPrDdfjRAHXCSxqwyBpTb7fCeC1tKurkJaRhhD0JyvI8mt3fdqKQGER2YaLJ9duU2JRBJc5D4cKpZVSBo5/MUMU5l276et3Sf0/c18MwDOhE+iFeeT5p0I1g7UByw3IJKC92ooIpTp80mmjhTYQBV8yslN/uMB6Fco7Sgayt+IH4/8XkLQGksdGF/JKFDbXO0YHBVOqFVE3E0l23ntKwKddlI8L2FBa2kO+ptZREPSk/Zk2gYLr4+6Kd5W28mVK0usJWaUbk/UeeMyCsH1o8DJNRNKWhZCrUkpdErUT9GKkW8lHiIF1I/YU0rliqmzPOOsUE0nmF8WodvqBFexBeEwce7Wjx5rHzdRkYgTGrNtWBSDwpTLTOidBcIvIJAc9cNdk16bxoADvOuXWqP7GrgEQOO+Pl/q5Ik48pac++/CE7UatVEc0nZd+LoWtxbh/Zuoh8GL519BsT3bcY1FMjDQadh0j25Ny3ATIDk9jfNCsvhQgGyCgX2+3G2BUmHSf35vyZ/YE3ywVtWYOPD5I8wD6uyJr1kMBqORwT/NJ2hJAk/ViBJcP3LdfjE9HWd0pnvU97pb0+qc9mQOlXQL49fEdja+zgWrD04m7NHf8nTgdE/ZurXrHz3EyoYWj2iCAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=05191234c3abcf1092bd3adc050131c9"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>ee75ed54-3c84-486c-b981-118614885fc5</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 08:03:33</sys_created_on>
+        <sys_id>43ba5ef4c3abcf1092bd3adc050131f1</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>1c2b0ad8-de86-4d65-9520-d1e5794f358e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1U32/aMBD+V1CeWZQQQMBbNYa0h7USq/rStZZjH9SSY6e2Q2GI/33nxAHarhWqmKZJ44k734/vu/sut9tI8GgS9YEn6TgdsizNsl6S9Eb9NB9medrjGQVIo26kaAEYaYBpw9FeUVl5x3b72QB1wEkas8oYUG63w3cubCnp5iaEoYc9CMnxPZrc3nWjkhqs6MBEk+2LJ7cpgUiag8TEqWZVgUU7X6dY41S0bfa8hfsSvu+BNg/VifBOfPJ40qQbwdqB4oDtFlRa6EYFVZw6bTbRxJkKHciaXym52Uc8COUapgVdW/ET6/cTH7cApMbCFPYmCRNqh6MFg6vSCa0aj6O5bCenZVWoy4aCny0saCXd0Wwri/Wg9JA9iAbh4vuDfpq3/WZC1ewCWqkZlXuLOmdEXjmwfh0goR5KQctSqCUpjV6JOhmhFPFSohEvpH7CnlYsVUyZxx3jgGg8Q/+0dt9QIzyJb1gGk3c1efJY+b4NjQCY1JxrwqReFIZaZkTpLrDwCgLMXTfINem9KwA47LtWqT2Sq4FHdDji9/+jSpKMW+c3a/i9stYQ3KrV6vkLcYauQN6j7ULSp8FriZ+z9Mdu5RoKBOSg00DqnjyttsBMgOT2N+ML5+JCA7IKDfYXc7aTSYdJ/ft/OH/gcPLBe1Jg48Pmj2oejmdNeslgNByPCH5GUbkkCX9QwiTI//VdfGH6ug7pzPchH9S3B9W5bECdSuhZ8hsEW3kf+4K0B2dT9ugvaTog+sdE/ZaU734BwvKLZrQIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=43ba5ef4c3abcf1092bd3adc050131f1"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <generation_source/>
+        <order>14</order>
+        <parent_ui_id>f9512a1a-5103-4918-bb63-66c94440e900</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 09:20:23</sys_created_on>
+        <sys_id>5ae53fc9c32b835092bd3adc050131bd</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>94a5f23c-739c-4838-bd78-fee251067cd5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTWsbMRD9K0bnZdF6beP4VuIaemgCbsglDUIrjW2B9iNarWPX+L93pNU6jtOmJhhKoXvaGc28eW/00MOOKEkmZACSJlfJSKRJmvYp7Y8HSTZKs6QvUw6QkIgUPAesNCBKIzFec924xG53bYBbkCyJRWMMFHa/x3Op6krz7X0ow4xYKS3xnEweHiNScYOIFgyZ7E6O7LYCpnkGGhunpWhyBO19mSLGuWy77nlH95S+m4GxDOhMuSQeOT4JjQhsLBQScNyC6xoikvNCcluaLZlY02ACVcvbQm8PFStV2FZpzje1+oH4A+rqFoDSRNjCIWRhQ91ySiXgtrKqLNqM5ZnuNlfqJi9uWglut7DgjbZHu21qxIPKUXYkWoaLb6vyed7Nm6nCqwtsdSm4PkTcWqOyxkLtrgM0+KXkvKpUsWSVKdfKNyOVPF5qDOKFLp9xZq2WRcyF4x3jgng8w/zUp++5UU7EV4TB5r0Xz54aN7eVEQgzr9kLZv6isLQWRlX2EwKvIdDcR8Gu2fA9A4irl/s+wnyx7Ib16XA8uhozdIM1nNHwswbNDDw1UNu3Dv4syjtf0psfSj5m6TtHqnfTkjpX0Kvm3wgMpn6VC54eXszT47/k6cDoHzP1n6xM++++ZUc37d1bH9m4tvjsfm8oTeXgrV1PTj/oVMgR00KvRY3O5twBzBRoWf9CRGfVMICtw4DDE3wxvyYj6r//L/EFX+LHn0mfNkE6CAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5ae53fc9c32b835092bd3adc050131bd"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>012f9f4e-7240-41a3-bd4c-50d827feaeb4</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 07:45:14</sys_created_on>
+        <sys_id>7a86dabcc36bcf1092bd3adc05013137</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>c6ea8e32-d378-42e1-a6b4-dc7770d6c1d0</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UUW/aMBD+KyjPWZQQQMBbNYa0h7USq/rStZYTX8CSY6e2Q2GI/75z4gBr1wp1naZJ4wHh8/m777v7jttdwFkwDQbA4mSSjPI0SdN+HPfHgyQbpVnSZykFSIIwkLQEzNSQK83wvKaidoHd7qMGaoGRJMprrUHa/R7vGTeVoNsbn4aRfMUFw/tgensXBhXViGhBB9Pdkyu7rYAImoHAhzOV1yWC9j7PEONctt3rRUf3KX1XA8/MoxPugnjl+CRxGMDGgmSA5QoqDIRBSSWjVultMLW6xgCqZldSbA8ZKy5tq7SkG8O/I/4gdnkFoLTcd+FwJL5DXXMUz+GqslzJNmJpJrrOKVGX8rKV4HoLBa2FPeltbRAPKkfZkWgZFl9X6nHR1Ztz2ajzbIXKqTicqLWaZ7UF48YBApqmlLSquFySSqs1bx4jlTJaCjxEhVCPWNPwpYxo7nhH2CAazTE+a8I3VHMn4gvC4ON9I5481K5uK8MTJo3mRjBpBoWpJte8shcIvAZPcx96u8b9Vw0Ax3k3LjUndtXwgAFL3Py/1XGcMmmMvndfBCdqlGyjheDLlb03Fq3dRj4Mn7v6N9HethHXUCIHC72WRXh2TzqAOQfBzC+a5JfC+gJk7Qsc9uLdFiMZxc3n/3r8gfXIhq9ZIZ8cJ3+CeVyRDenHw/FoMib4Z2k1JbH/sQZBvOOfr8KnXF03Kb3FIeWN/nakepctqXMF/fT4BYGdvU9j3trDd3P2+C952jP6x0z9kpXvfgB7iEFimggAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7a86dabcc36bcf1092bd3adc05013137"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <generation_source/>
+        <order>10</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 14:49:58</sys_created_on>
+        <sys_id>a8c73770c3e7035092bd3adc05013122</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>d6014bc7-9f9f-49c0-8c10-41b17b3389b8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YTW/bOBD9K4bOjpeyLEXOLdg0QBe7W8BJe4kDgSZHMQuZckkpjdfwf9+hRH3EThQjUdEWyCUwhxzyzeN70ig3W0dw58yBSeD5+Oc09og7dkkIQRiyKaEsDAJ/4jlDR9IV4Eq6Xqv0niaRAqpTiRM4yM0M/uRCrxO6+dJE2FIkXIF0zm5uh86aKtwlA+Wcbfemss0aooQuIMHEq0wJeYfpx4KrEs8tusGsQvcsbHMgTujqqFRxg2s8dOAhA8kBj45pomHorKjkNEvVpo7gLvyTTJrAUsisrHhFH7T4D7d2A2IWxoA1MktHPYwsVRVLqWDwaZ0JhFZEMrpIKgrTJF/Jf8s6DMkQ0zzJWiTnGveDtQFtUFhI8dUy/T6rDrwUsqjPTiYpo0k9ohmysMgz0OZicnG9x00Z+Xv/diCBFZ4YrZBdjESGYlGcgqBXo7sEB6M4Sb8jOi3u5IgyU+EIyaSjS4xfFOEvVAlT7j+4DSab4z5L8S2Hj+b2g/EimJKQn/CYLE4moeefUAbkBALXB58HzHc9Z1dQG33LTVElSZaOqGQUF2imxDo7Rwj3YCvfDa3+iRuPYTodk4VLiEdI6DMSerDwToNTj/LwCSHFAhLekn81cWiD1szr7HBpjhoUChgejffAEpcW8HOFWEMUw0iWh/VuipCQn+SKTOVvMcWP0fpLui0LfkG8rFMM0Hp4f01zJTu0Gy2FLq70WQ23VvSl5SPgV8l/lfj3pbxfVoeSvXcl/8JKPg27pMBIc+UKGN5oS8Lb7Z94axnwyB2xXCEp2W7XY0tykbLc0Db4eFEJ9wi0VfasgrsP30qV290jwRutkm6tljI4Rqre+F2oPT9y/a6rj6fNTfMcKUFdtqU6d0qkc+ds7shUwtwZzh2zKjJ6KMK4AhHWE0VsuyvHuaI23W0Nm1xON7pYqdkSeJ6U0UeRUtc23qdPruwBgwtE/ce1aD3nX+asNlte5j9JY9W4V5WUvIn2U97v7Sk/+U17+B/Xmkd1O4teQYO/ufeedOoCWiKomxCWSi4MXt2yVdnogp7BV2CZPpebzzdPvBVGCvDTQptYnKoRyoLegdrtbg9N0MOOrzNR8xmLAteVgY4gqn7f2LxO4qyRmk9jm2RNNOnr9fPzOqVf00VvNcyCdfYdrLn3krvGIg/RmPhhMA0j7D8yRSNif9yD+c9IoeJDG3xg6XWxZDCrl7xO19cGz6Pm/4haHiUf1mZVXAz3mn23x2b/XcBvF/Dt/+9NO81vFAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a8c73770c3e7035092bd3adc05013122"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>b66dbf76-aa0e-4af3-86d9-f9df57f6e44a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 08:14:32</sys_created_on>
+        <sys_id>c04d567cc3abcf1092bd3adc0501311d</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>ff72e646-2f6c-4518-a56e-08637223c4f7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UUW/aMBD+K8jPWeQQQMDbNFZpD2slVvWl6yzHPsCS46SOQ2GI/75z4lDabh2rkKZJy1N8vvvu++4++XZHlCRTMgBJk0kyEmmSpn1K++NBko3SLOnLlAMkJCKG54CZFkRhJZ7XXNc+sNt9sMAdSJbEorYWjNvv8V6qqtR8exPSMCJWSku8J9Pbu4iU3CKiA0umu2dXblsC0zwDjYWzQtQ5gvY+zRDjVLZd9byj+5y+74FnGdCZ8kG88nwSGhHYODASsN2C6woiknMjuSvslkydrTGAquWV0dtDxkoZ1yrN+aZS3xF/QH3eAlCaCFM4HFmYUDecQgm4Kp0qTBtxPNPd5Apd5+ayleBnCwtea3c027pCPCg9ZU+iZbj4sioe5l2/C2UadYGtLgTXhxN3zqqsdlD5dYCGZig5L0tllqy0xVo1xUglj5caD/FCFw/Ys1JLE3Phecc4IB5fYHzWhG+4VV7EZ4TB4n0jnt3Xvm8rIxBmjeZGMGsWhamVsKp07xF4DYHmPgp2zYavGUBMHvd9hPlo2Q3r0+F4NBkzdIOznNHwswbNLNzXULmXDv4oiusmpTc/pLzN0teeVO+yJXWqoCfFvxAYTP0kFjw9PJunx3/J04HRP2bq31mZ9l99y4423bi3OrJxcCrzW/9aU5rKyvmFWvkNf1yIvRu+tPIfVL7R4ZBjPwe9tmN0stYO4EKBltVPxHcWDw3YOjQ4PN1n83kyos33/wU/4wt+9wMzuf3ycggAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=c04d567cc3abcf1092bd3adc0501311d"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=a9f09a70c36bcf1092bd3adc05013104^sys_idNOT INe585c0cdc32b035092bd3adc0501319c"/>
+    <sys_hub_sub_flow_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <generation_source/>
+        <order>12</order>
+        <parent_ui_id>57647ef7-efe1-49d9-be22-ce055d4dbe81</parent_ui_id>
+        <show_stages>false</show_stages>
+        <subflow display_value="EcoTravel Request Assignment Routing">00cba3f4c367035092bd3adc050131f2</subflow>
+        <subflow_inputs>H4sIAAAAAAAA/5VSwW7bMAz9lUFnx5DjuK19K7YVGLCtQNf1UhQCLdGJAFlyZTlNFuTfR9leEKwFup0EkY98j498PDCtWMW4lDXmzUrmF5c8L3i5rFUOSvKCZ3nGOUuYhRYJidIFD1s0wuPzgH2gVzqvCLEFM0TI4fDRIwRUIkvl4D3acDxSXum+M7B/mGEUkRttFOVZ9fiUsA48cQT0rDr8lQr7DoWBGg0V3mGDlJFIHf5V/Z/az9Ldj/I/3E3y6Z3lvz9gVEEIf8ZPiag3SxjuAlqFpKcB02PCWrAKgvN7VgU/UIBMUbfW7E+IjbZhMqKFXa9/UfN8mZz1r9hOLHlxdVFeiUmX4OKVQHZWImaT3xp1NNxpibdd0M5OzAFq8x9E0pmhtd8nq+JOsYHBhLOdDj2JwC56EaebR21+bNzLaXE32o62zUnjJJjTD0Lwuh4C9vEOBn3/2vUp+PWNe0CDLfGKFrpO27XovNvqkYukt+na0CdtjHshjb1e2xRk9CKlTUF6Q/FPY/gBvI7GfKM2VBwZf1pNJnyJ91YAqmUDl4uC83KxUlm+KGvFF7kqi0xBvZJ0c8dxK+J5iKNNVs2miMl7AvTS6y5ck4QtzvMfn34Dc2kyXJQDAAA=</subflow_inputs>
+        <sys_class_name>sys_hub_sub_flow_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 15:50:07</sys_created_on>
+        <sys_id>e585c0cdc32b035092bd3adc0501319c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:25:08</sys_updated_on>
+        <ui_id>6af5766d-cf99-492e-924e-81a3a60912d4</ui_id>
+        <updation_source/>
+        <wait_for_completion>true</wait_for_completion>
+    </sys_hub_sub_flow_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=a9f09a70c36bcf1092bd3adc05013104^sys_idNOT IN25c85a78c36bcf1092bd3adc0501311c,414816b0c3abcf1092bd3adc0501316c,5f0d337cc3e7035092bd3adc05013188,b08b9a3cc36bcf1092bd3adc050131e5,b9919a3cc32bcf1092bd3adc050131a8,c5aa523cc36bcf1092bd3adc05013171,c6d53fc9c32b835092bd3adc0501310c"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">69c85a78c36bcf1092bd3adc0501311b</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>df41dd92-723b-4caf-b8ad-32849ad90c40</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 07:54:58</sys_created_on>
+        <sys_id>25c85a78c36bcf1092bd3adc0501311c</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>699321f9-eaf3-40b4-8f9c-2602c0377f92</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UW2vbMBT+K0XPwdhJE9a8jK6jUNhWWENftiKO5eNYVJY8XXJZyH/fkS9paDI2Rh/3Zn3n9n1Hn7xjJvgmeLcw187JpWbzb08jJnXE6HvHNNTI5kwYXUgvjWYjtgIVIrbb3VgEjwXPEhGsRe0TDxvJhQLn9vvvIU0nRa5APPMWX0tfcVFBKEsMljoV0jUKto9v1lBUUhVU18lowBJ7j5bNd69CftsgV5CjorkP3kq9pHJZ0OkKpuU0S6diMp5Nxmk6fneZ5bNJno2LCeDljPKGwpujrZxZVBxCkBvaG1tELuN0xHDjURdI80pQDkesBl2AN3bL5t4GAmgTxb1W20NGJbWnbizmbpz8ibFTmsbMEkmYwC56OPJ+vR0sKiMF3jcttxbxkKu+RhgVav2lkxAvBksIyg8XQ0hw1A+bSDrS6DmVD5VZfx0G3krdCuyDyghQhxN4WkMePLp4G6iwpka8hqah5fDGmpVsi4lLnSwVHZJSmTUNjb5MQETiCe0IklvCP7bwI1gZVXymNhgNIB13wspm0NYOZ/t2K/xHiHw6fb0S3i2DErqyaxqzwp70fnTqf94CL4/gzl18iIa8WJAh3596+iT+FhYtUyizK5GdtyhMzln04lOLnBp1UPQbt2Z/cGuP/JVdp9P/bj12a6SZg5OCt39cahff/j/b9SnashvhOg8VKKQjJouI3Q1/9RjY0q1LcQytjX2OGl6w/S+1htAqHwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">854816b0c3abcf1092bd3adc0501316b</block>
+        <comment/>
+        <connected_to>012f9f4e-7240-41a3-bd4c-50d827feaeb4</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 07:52:46</sys_created_on>
+        <sys_id>414816b0c3abcf1092bd3adc0501316c</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>df41dd92-723b-4caf-b8ad-32849ad90c40</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Uy2obMRT9laC1GWbGTWi9KSEhEGgbaEw2bRjuSHdsUY2k6uFHjf+9V/NwTJzSkkVW3Vnnvs6593h2zMRgY/Bzc+m9XGg2+/Y4YVInjH7vmIYW2Yxxo4UM0mg2YStQMWG73ZVDCCiqIuPROdQhCw60t8aFqjUi3++/xzyfigAbSYVCeqtg+/Daer6USlBaT9KCI24BHZvtnoXC1mKloEZFY+6Dk3pB5VLQq8mhKT7wgk/Li2mZ5+X7d0V9Ma2LUkwBoaC8sfDqSPMLa0hDCPJje+NE4lLmE4abgFogzWtAeZywFrSAYNyWzYKLBJBwcafV9pCxlDpQN5ZyN17+wtQpz1NmgySMYx89PKthmz3Ml0ZyvLMdtw4JUKuhhhsVW/2ll5DugA1EFcY7EBI99UObSCcaA6fmfmnWX8eBN1J3AoegMhzU4QWB1lDHgD5dAxW21KhqwVpaTmWdWcmumLi02ULRI2uUWdPQ5LoMeCKe0Y4guyH8uoMfwMmk4jO1oWK6oK88d9KO2rrhbN9tpfoZE59e36Ck6pdBCX3ZJY1Z4UB6Pzl1d9UBTxa/9Wdz8t7HU/MeRd7AluVLtjz71CGn5hxV/MGhxV8cOiD/ZNHz8/8OPXZoolmDl7zqvqHULv3fX23Rx2TFfoTvPSSQS09M5gm7Hb/TKbClq0t+DK2N+5E0PGH738jJ/kzxBQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">1c3ebbfcc3e7035092bd3adc0501319c</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 15:13:06</sys_created_on>
+        <sys_id>5f0d337cc3e7035092bd3adc05013188</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>57647ef7-efe1-49d9-be22-ce055d4dbe81</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXW+bMBT9KxPPBBkIachbtanSpG2V1qovW4UutkmsGZvZJmmG8t93zUcStak2TX3cGz7m3nvO4Vy6QLeuaZ2919fWirUKVt8ew0Aoj+FzFyioebAKqFZMOKFV0QNhsAXZ+gt8ZMI2EvYPJ4RuhGSGj90aMFjjuAlW3bMrt294IaHkEgvvnBFqjeWC4akiUMU5jWmaLNKEkGQ5j8tFWsYJS4FDiu9Nhe8ncu8+9Uj4Kms/D3E7TdKGeVoxCQP+5LhiHEdXIC0PgxoUA6fN/ogYDuxWyROwEcoNimt4suIX9k6yzL9YcdRIRzuOx2K0anJJC8pvG09wQByUcrJQy7ZWXwYd3mReQSvdmcmtxX688aQ9i5FSdbfRu6/TwBuheoHjpdQU5PEEDm0oW8et/zBc8hobFTU0DZpTNEZvRV+MXOpoLfEQVVLvcKhPSgTUE4/QI4huEP/Qww9ghFfxGdtg8UCzBCto0acK2zmDEg69LcXP1hMaBI5SisENfMFSIxp3jXO2fGR9CF9G8iyNXccWJJ6X9GqWV3k1m+eUzJY0JjMMT3xVpukyL5cRckN1IAvrwPHD4XtLSMoGFBPwItJv1fYt9iKHrMpikl3ei/ni0l5c2IjXlyH5wzL4z/eXu0AI+b8M58sgbDGEetTWD//nXXj0wR8m2CE3jFNhkci9xz5Of3F/sccACHoO7bT54SWcsMNvVo6eCA8GAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">960f1270c3ebcf1092bd3adc0501318f</block>
+        <comment/>
+        <connected_to>012f9f4e-7240-41a3-bd4c-50d827feaeb4</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 08:06:57</sys_created_on>
+        <sys_id>b08b9a3cc36bcf1092bd3adc050131e5</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>b66dbf76-aa0e-4af3-86d9-f9df57f6e44a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">b1919a3cc32bcf1092bd3adc050131a7</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 07:23:36</sys_created_on>
+        <sys_id>b9919a3cc32bcf1092bd3adc050131a8</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>012f9f4e-7240-41a3-bd4c-50d827feaeb4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1U22obMRD9laBns+wlNo1fSkgxBNoGmpCXNohZadYW1UpbSWvHNf73jvbiuLVLS+hj36wzt3NmjnfHbBuaNvgHe+29Who2//w0YcpEjH7vmIEa2ZwJa6QKyho2YWvQbcR2uxuHEFDyLBGtc2hCEhwY31gXeG1lut9/adO0kJVWy1WgUql8o2H7+PoOYqW0pMSeaAOO+AV0bL77JRS2DXINJWoadB+cMksqV5JeVzCtplk6FUU+K/I0zd9cZuWsKLNcFoCXM8obC2+OdJ9ZRRxCkB/bWycjlzydMHwOaCTSvAq0xwmrwUgI1m3ZPLiWAJIu74zeHjJWygTqxmLus1ffMXZK05hZIQkT2EcPTz7ss4fFyiqBd03HrUMClHqoEVa3tfnYS4iXwApaHcZLENJ66odNJB1pDJyq+5XdfBoHLpTpBA5BbQXowwsCraFsA/p4DdRYUyNeQ9PQcnjj7Fp1xcSlTpaaHkml7YaGRuclICLxhHYEyYLwdx38CE5FFR+oDRXTBT33wqlm1NYNZ/tuK/xbG/n0+gYlvF8GJfRl1zRmjQPp/eTU4bwDXmx+6y8Wnfvenhr4p9i/sGaVQpVdiey8NaE4Z82L9x1yatBRyW9cmv3BpQPyVzadTv+79NilkWYJXgnefUupXfzPv9qmT9GO/Qjfe0iiUJ6YPETsdvxex8CWrq7EMbSx7mvU8ILtfwDPyizF+QUAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">0daa523cc36bcf1092bd3adc05013170</block>
+        <comment/>
+        <connected_to>699321f9-eaf3-40b4-8f9c-2602c0377f92</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>df41dd92-723b-4caf-b8ad-32849ad90c40</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 08:03:09</sys_created_on>
+        <sys_id>c5aa523cc36bcf1092bd3adc05013171</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>ee75ed54-3c84-486c-b981-118614885fc5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">dd16770dc32b835092bd3adc050131c4</block>
+        <comment/>
+        <connected_to>57647ef7-efe1-49d9-be22-ce055d4dbe81</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 09:20:06</sys_created_on>
+        <sys_id>c6d53fc9c32b835092bd3adc0501310c</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:21:08</sys_updated_on>
+        <ui_id>f9512a1a-5103-4918-bb63-66c94440e900</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=a9f09a70c36bcf1092bd3adc05013104"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=a9f09a70c36bcf1092bd3adc05013104"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a9f09a70c36bcf1092bd3adc05013104</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 07:22:00</sys_created_on>
+        <sys_id>6a31deb0c36bcf1092bd3adc050131be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-23 07:22:00</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a9f09a70c36bcf1092bd3adc05013104</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 07:22:00</sys_created_on>
+        <sys_id>e631deb0c36bcf1092bd3adc050131a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-23 07:22:00</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_a9f09a70c36bcf1092bd3adc05013104"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_a9f09a70c36bcf1092bd3adc05013104"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Automatically process EcoTravel requests, determine Standard or NSSR classification, calculate system fields, manage approvals, and update request status.</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>ecotravel_request_processing</internal_name>
+        <label_cache>[{"name":"Created_1.current","label":"Trigger - Record Created➛EcoTravel Request Record","reference":"x_2058698_ecotra_0_ecotravel_request","reference_display":"EcoTravel Request","type":"reference","base_type":"reference","usedInstances":{"ff72e646-2f6c-4518-a56e-08637223c4f7":["record"],"58a9e3ee-9030-4a55-9b68-bac2134e7be6":["record"],"d6014bc7-9f9f-49c0-8c10-41b17b3389b8":["record"],"5459b8c1-fea2-464b-8ef1-e79ba22429dc":["ecotravel_request_record"],"2962cb5b-550e-4606-a076-afa5f09a83e8":["record"],"c6ea8e32-d378-42e1-a6b4-dc7770d6c1d0":["record"],"1c2b0ad8-de86-4d65-9520-d1e5794f358e":["record"],"9151ee4b-9abd-48fc-bfb6-d6165fb4e7ec":["record"],"094baba4-c439-45ae-ab3d-204bb395487e":["ecotravel_request_record"],"20890ae7-dc85-49a8-ba22-66356e84548f":["record"],"6af5766d-cf99-492e-924e-81a3a60912d4":["ecotravel_request_record"],"78d44202-5251-4bb2-b7fb-b92c3240377c":["ecotravel_request_record"],"20c1f0ae-9e82-4b11-8d0f-b4f3371762e0":["record"]},"attributes":{}},{"name":"Created_1.current.taxi_class","label":"Trigger - Record Created➛EcoTravel Request Record➛Taxi Class","reference":"","reference_display":"Taxi Class","type":"choice","base_type":"choice","parent_table_name":"x_2058698_ecotra_0_ecotravel_request","column_name":"taxi_class","choices":[{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Uber"}},"sequence":0.0,"label":"Uber","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Uber","missing":false,"value":"uber"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Taxi"}},"sequence":1.0,"label":"Taxi","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Taxi","missing":false,"value":"taxi"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Black Taxi (with chauffeur)"}},"sequence":2.0,"label":"Black Taxi (with chauffeur)","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Black Taxi (with chauffeur)","missing":false,"value":"black_taxi_with_chauffeur"}],"usedInstances":{"699321f9-eaf3-40b4-8f9c-2602c0377f92":["condition"]}},{"name":"Created_1.current.requested_for.manager","label":"Trigger - Record Created➛EcoTravel Request Record➛Requested for➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","choices":[{"order":0.0}],"usedInstances":{"d6014bc7-9f9f-49c0-8c10-41b17b3389b8":["approval_conditions"]}},{"name":"Created_1.current.transport_mod0","label":"Trigger - Record Created➛EcoTravel Request Record➛Transport mode","reference":"","reference_display":"Transport mode","type":"choice","base_type":"choice","parent_table_name":"x_2058698_ecotra_0_ecotravel_request","column_name":"transport_mod0","choices":[{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Train"}},"sequence":0.0,"label":"Train","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Train","missing":false,"value":"train"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Flight"}},"sequence":1.0,"label":"Flight","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Flight","missing":false,"value":"flight"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Electric Vehicle"}},"sequence":2.0,"label":"Electric Vehicle","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Electric Vehicle","missing":false,"value":"car"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Pool Car (non EV)"}},"sequence":3.0,"label":"Pool Car (non EV)","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Pool Car (non EV)","missing":false,"value":"other"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Taxi"}},"sequence":4.0,"label":"Taxi","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Taxi","missing":false,"value":"taxi"}],"usedInstances":{"012f9f4e-7240-41a3-bd4c-50d827feaeb4":["condition"],"df41dd92-723b-4caf-b8ad-32849ad90c40":["condition"]}},{"name":"d6014bc7-9f9f-49c0-8c10-41b17b3389b8.approval_state","label":"10 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"57647ef7-efe1-49d9-be22-ce055d4dbe81":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
+        <master>true</master>
+        <name>EcoTravel Request Processing</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="EcoTravel Request Processing">a9f09a70c36bcf1092bd3adc05013104</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1da2ef4dc367835092bd3adc0501313d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:41</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=1da2ef4dc367835092bd3adc0501313d"/>
+    <sys_variable_value action="delete_multiple" query="document_key=1da2ef4dc367835092bd3adc0501313d"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=1da2ef4dc367835092bd3adc0501313d"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=1da2ef4dc367835092bd3adc0501313d^sys_idNOT IN11a2ef4dc367835092bd3adc0501313f"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>1da2ef4dc367835092bd3adc0501313d</id>
+        <name>EcoTravel Request Processing</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>11a2ef4dc367835092bd3adc0501313f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 07:56:13</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=11a2ef4dc367835092bd3adc0501313f"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=1da2ef4dc367835092bd3adc0501313d^sys_idNOT IN9da2ef4dc367835092bd3adc05013140,d9a2ef4dc367835092bd3adc05013155"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</model>
+        <model_id>1da2ef4dc367835092bd3adc0501313d</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_1da2ef4dc367835092bd3adc0501313d</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>9da2ef4dc367835092bd3adc05013140</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:40</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9da2ef4dc367835092bd3adc05013140"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</model>
+        <model_id>1da2ef4dc367835092bd3adc0501313d</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_1da2ef4dc367835092bd3adc0501313d</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>d9a2ef4dc367835092bd3adc05013155</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:40</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=d9a2ef4dc367835092bd3adc05013155"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=1da2ef4dc367835092bd3adc0501313d"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=1da2ef4dc367835092bd3adc0501313d"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=1da2ef4dc367835092bd3adc0501313d^sys_idNOT IN21a2ef4dc367835092bd3adc05013194"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <generation_source/>
+        <name>Created</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>21a2ef4dc367835092bd3adc05013194</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 07:56:13</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VYW2/bNhT+K4KeNiAFdPE1b13iYgG6BrPd7SHIBEoibWI06VKUErfIf9+hLrasi2PHduc8tSYp8jsfv/Odwzz8MBnyMTOvzSnyGTavTMoVlhyx6WqJYVjpYY+jhZ5bIB4iJeTKvFYyxlcmkWIxxYslQwoWE8QiGBQyxNK8tq/MBLEYT1bRXQg7wffpNvmeZj4Nv589x+oOesOBhwOhJPKs/D8JZp7E32IcKVge0ggOWv2VfzUKxDRdYozXS4I5ZaHE3Lx+eLwyl0jCgUqD+VGZohpRQAI0dLAVuLbrOJblDDq233N92wldhC0LNqyyU4lANZC0CR8/K8xDHK6ZqfEnMQrvOVutV8yB/oyrBXqO6HfYfWDpdQQD9gBnc+ufXs5JNhzMBQ3w/VJRwbORDGc2KVi84F8y/JpNTFDMVMEmjMQR7IeXGrIGkSMik7l4GhcHfqI8jS6fZCJAbP0LKSWpHyscacIJZUC9l3ETiVim6Mejm/vxrff3x+nN76OxNx5NpuO7m+no1nxJ4/K+xXrHDGGOxcvCeVlL4BPFTF8gWi6lABXB4iiQdKk+BoomhRJfrjbqvhE8pCkvNYUHxVS0rfAi/l0St6xWkQelEwuh/zP6s67jbPAw5fZ6CIUYtSjXJyXlliNvgKYaSChHt0vD+cg+Iu5Y1v8k49yo3qriJ8RV5CnhoTD0SixB0sPGOkQRYna7OQ/G6WwGwqd8GavoVVlnsb28qmAZc/jAW99HXccpbWv+PlNwxOsHyMOJtseU9A9gSqSgKsdPPucHjGNuCG4EsQSOlAHXbBSHGSlILQ1yt0CznGjYmOFAlbRBvkblX3/QKKJ8VgqmDUu6oA6GrcqICtM9BsPjKVO8fiVJJZ5Kqh+c57ZNiI+JY/V1ltuW6xPb6ltdRELXsgKnlOd1MK0oVUUwZ8n3w7I9SqXK9rj9KsU5eKucK3tJOdnOg4IELZHcVG5OA80+ETRHQ6uYo3uQO65lmQ3fbqtzV2gn7g1QmCD4Iixi3Kf27+GPhIkn8N3jvZEIiWdSxDysmpI+wqDw79aK87iij4J/d6PYrDB+yS/110tzyM2lFLJGfHUCb3SJ7Q9xB1tgiS64od8dDv0AOYT0e33s2BVv3MBoxPYuPPGVa0+adNPmj41CTpr0f4AzHgGw5pIHAzzeH3NhNrpjNvc+fPBpjrkHUKXHaPourtjhjNEQF3Onzfba0ckmv4/NeDIYBl273w/68OKBjCcd7CO743TRsN9zB91Kxteg7IKpGpj5Ke+gaBWlQFrc4Gs2dVlP+3PKNsJK6XJ0dA1PP0fZeaXyqW/ISP1FSEOza9xtFhoTDMUwfRifq6YLNa9Vc0DyG4xvIdGd4RfBPzSgO+NDjMNLYR/iWpBdWu9RUVSyfQlHv85wZ9AdErfZj8iwyY82YNphXnwvsqcUklZRNTUl+yZm0pjfrV3EG3KrIpNye7Gj/zkVKfbJSXHOR4p7dM9V5GLrk/QtYN9RvUubkJMVPcGxJ0ijbVNi5H+axKHhrww1x8Atgy4bTjY0jDPWlax7rlU9GDby5udsBU3fSZWUW2HAhCF/Ci3nqWoV3Zz2bY3DPup23ZZOe1h9WzcBegXvxde4gyWSNCluZ6E7bN/qno2lrpRQ24rYs4idNOrmSnZc1I217LWoj69Su/4y0IDiQuvP439fh3IW8B8AAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=1da2ef4dc367835092bd3adc0501313d^sys_idNOT IN25a2ef4dc367835092bd3adc05013181,29a2ef4dc367835092bd3adc05013182,2da2ef4dc367835092bd3adc05013184,a9a2ef4dc367835092bd3adc05013180,ada2ef4dc367835092bd3adc05013181"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>699321f9-eaf3-40b4-8f9c-2602c0377f92</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>25a2ef4dc367835092bd3adc05013181</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:40</sys_updated_on>
+        <ui_id>58a9e3ee-9030-4a55-9b68-bac2134e7be6</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1U0U7bMBT9lcrPXZW0tCp9m+iQJjGQAPGygXVj34I1xwm2U9pV/fddJ07aAUMg8TCk9aGqz73XOef0nnzfMCXZjB2gTNLDdCJG6Wg0TJLh9CDNJqMsHcoRIKaszwzkSJ0WRWElnZegqwBsNkcWwaPk6UBU1qLx2y3VpXKlhvVVbCNE3Cktqc5m36/7rARLN3q0bLZ5VHotJQ0Zamo9bzk95ujXZTjLQlQ58eKqBU/i5DxWel/nVKGhQCdN+gxXHo1EIrIA7bDPcjASfGHXbOZtRQCJlmdGr7uOO2V8IzSHlVO/6MkHSehbICkT0YTuyKNBDbyYg4cLuln4ynZ+FUqgazyRuIBK+6N9rGk4K70qTDPiIdPtdKGr3Jw2jrDugr3/o3JEAsugMzBvZC0u7oqH85bksTK1JVGiLgTo7gTeW5VVPtDZMNRYe5xDWSpzy0tbLFU9TFTywa2mw2Chiwd6plO3ZgAi8B6QqzA4Jnxew1dgVRDxja6h4W2fubU70uDcTgp5yO+rwKQRFiXw2oXaAl5vQhgWVpX+Mz1qiZH4th+XPhm+uGG4W6h6193e0lu8J8DzsEs/qiQZSeOcvQlfnBbDFaZBMw3iJ/ewUjfOU0ga9NP4aT7e4ca35esV6tt8HSvU0j1jR8yXx5ykeOSNPX9G7DIWe1ex2KXs3WKWTpL68z9s/27YsvFL6yYOd9u1d+cucCs+TMbTyeGU07vdW+BJ/LFEzWN2nobqiygu65beedfytpS8gnabkst6HZ6X0QblMXayP9s7bQoxION3y8f0IyUjyvjw0fhbIK5/A3LZmC90CQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=25a2ef4dc367835092bd3adc05013181"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>b66dbf76-aa0e-4af3-86d9-f9df57f6e44a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>29a2ef4dc367835092bd3adc05013182</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:40</sys_updated_on>
+        <ui_id>ff72e646-2f6c-4518-a56e-08637223c4f7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVy27iMBT9FeQ1gxJeAnYjGKSROq1EKzad1jL2BSw5j9oOhUH8+1wnToig6oDUDRpW8X35nMs5yfOeSEFGpAsiCIdhn3fCTqcdBO1BN1z0O4uwLToMICRNErMIsFIDT7TA84apzAX2+7EGZkHQsMUzrSG2hwPmhTSpYru5L8MIX0slME9Gzy9NkjKNEy1oMtqfpC6FpNgCFJbOSkynGO0udWeR8CxCXFSWwTvfOfGZxs8JZrDJwQmDJoGthVgAAlkyZaBJIhYLZhO9IyOrMwwgafEQq11VsZaxLYhGbGvkH7y5G7i6JSAz7pdQHalfUBFeTphljziZ20xX+0okB1PsRMCSZcqO67Gi4CG1MomLFssWquxOVBbF98VGSDWg9n9kBkFA6ng65AWt5eM6eZ+VIKcyzlfiKaqEM1WdmLVaLjLr4OwJKMh3HLE0lfGKpjrZyLwZoUStlcJDa6mSd7zTyFXcYtzhbuFWWWuK8UkenjMtHYlfOAabD01idmasmDFHKrhD+pY5JAUxT4HmW8hXQHMluGauZWq/41Ub8MAPTS/6Re8zhfHhUVC1mUfhb2k76A36wwFFuVnNaOAfNqCohrcMjD33wQ+ePOUljVlVcp0xLoBdGuMpl8PHNLw3zmJ39d7GfZHwzuh9mTMGt+QMT+PmrfEvQwTtT1+5NSXlHjA1M3i9U6eg31kQdISxThdavOKD9bFvvXNDXNF5nU8uYFP6ZCpBCfMBvdIkECFkC7Sge2IUn2zMfbL6jHyZW8J+kP9uyDP/zdfk5S/kkn+SRAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=29a2ef4dc367835092bd3adc05013182"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <generation_source/>
+        <order>10</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>2da2ef4dc367835092bd3adc05013184</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:41</sys_updated_on>
+        <ui_id>d6014bc7-9f9f-49c0-8c10-41b17b3389b8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXW/iOhD9K8jPlHUISUPfqnIr7dV+SLS7L6WKjD0pXoWEjZNuWcR/33HsfCy0LNylUnvVlwrPjO3j43NqOzcrIgU5IzDwXQ//nEYudfoODcAPAj6kjAe+7w1c0iUJmwNWssUiS+9ZHGbAVJpgAhuFzuBPIdUiZsuvTYTPZCwySMjZzW2XLFiGo+SQkbPVRmpfGDGbQoyl5xZHZ1zheBJgvlzohMozmdzZ9gc7zFUVTDOhYfW7BB5ySAQgnojFCrpkzhLB8jRb1hEcWnxO4iYwk0luFjxnD0r+xPkcn+rCCHCJ3LJRN0PLlAlHI5YzRFLwvMhq4lLJQRlyBESsiPOLdswUfF7kEhdZdsnZNK56p3ExTz4ZRkg9QGtjCoUgYKFXqqHbdURXs/THuEJ5KZOSFJuMU87iusVypG5a5BrPihTyeoNlE9niGWKY44zhHPcJI6HeLFnOgqDnvbsYG70oTn8gOiXvkh7jeoU93AHWu8T4qAx/ZZnUy/2Iw2BnPd2XRH4v4L3Wkd+f+kMaiBMR0enJIHC9E8aBnoDveOAJn3uOS9ZdopbqImZKNUThDoXfC71MQ5slKDQc6y48k4v8HEHdg+Vi3bUuok7Uh+GwT6cOpS6lgcdp4MLUPfVPXSaCR0QaSYhFy0RVYttMrcxhptoD1ZapLi2sp+BaS5XNsCz63VZl/84nkzi6tQJKX5O3cPK/sdbzOOZw9RsK/mABvlNs0DpIvqVFluxwQDiTqlTGk05oVRzmiD1AVo7416DcNMQm+P/iB/fND/9/P5wGu6TGaSOpDDgKo2WE1eoCNz8HETo9XmRIU75eH+GStQekSv3jCtMmRqt3kfKi3AspNgQ/spnO+1GjeLpb8UYX+wje7b/J/UXKnXu7tBUNGymJAklCdbcFPyEG+4ScTUiSJjAh3QnRVaHWVhnGCkRYJ8rYam3aRcZsd6fVbPoKtlRlpeIzEEVsor9FwlL6Nn4Mt+3BSOW2UQGdkaFkm6TqEVPhNKzIrZPmyhaUI727lu0TxzvaiTN4TefN375tnu/JEtaXevQX/pt4hjfJYKf+oCW2+lrF00RIvQLVMqd5GoAawzfguTpPll9uHjmhehngI0zpWJRmPVQXu4Nsvb7dttIRRjzMintQUR986CD1J2qsJZsPDrZT247NZwqbtFYcHOsofGV3v5fpxePbbsp3XrJ4oy3DZmO0h7BPvcAfBiFetvKMhdT+uAf9Tav0wraZ/uHpdVnSGdclh7ljD8SVO64t5I0VWD+UzcceQWW3jUeQc+CRZIzxqA/eXPBiXHD7CxTW1rpYFgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2da2ef4dc367835092bd3adc05013184"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>012f9f4e-7240-41a3-bd4c-50d827feaeb4</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>a9a2ef4dc367835092bd3adc05013180</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:40</sys_updated_on>
+        <ui_id>c6ea8e32-d378-42e1-a6b4-dc7770d6c1d0</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXW/aMBT9K8jPDCV8ifJWlSFN6lqJor50rWXsG7DkOKntUBjiv+86cQJru4pqfVil8YDwufc65xzuyd2OSEHGpA8iis/iIe/FvV43irqjfrwY9hZxV/QYQEzaRLMUsNMAz4zA85qpwgO73YUB5kDQuMMLY0C7/R7rQtpcse1taEOEr6QSWCfju/s2yZnBGx0YMt49K51KSbEFKGyd1Zyec3Tb3J9FxosUeVFZg5dhchIqrW8TrOCQpxNHbQIbB1oAEkmYstAmKdOCucxsydiZAgEULa612jYdK6ldJTRlGyt/4pP7ke9LAJXxYEJzpMGgCk4mzLEbvJm7wjR+ZZKDrTwRkLBCuYtjrGq4zp3MdDXi2ELV05kqUn1VOUKaC47+j8IiCci9Ts+8kpXcrLKnWU1yKnVpSZCoMs5Uc2LOGbkonKezI6Cg9DhleS71kuYmW8tyGKmknaXCQydR2RM+08ql7jDueXfQVdaZIj4p4VtmpBfxHa/B4X2b2K29UMzagxT0kD4WnkklLEigpQulBbTcBD/MjczdOT5qDYH4vh2WPuq+uWFwWKhy1+3R0ht4RMBRv0s/iijqCW2tefBfFBfDZrpCEyWXK/dgHQakQr4MXmbjL297X65OUF3naipBCfuKDSFXDlKU4YBWtvwerXkotm5DsUnXh8UrHkbl53/I/t2QLQZvrRs/O2zX0Z2HoG1oNxqMhmcjiu90ZxiNwo81KBpy8zJQX3k2L1tas6blfSk5gXadknm5Dq/LqIPyHLs8nm1dVYUQkMGH5WP0mZIRZHz6aPwpEPe/AI+PzARsCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a9a2ef4dc367835092bd3adc05013180"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>ee75ed54-3c84-486c-b981-118614885fc5</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>ada2ef4dc367835092bd3adc05013181</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:40</sys_updated_on>
+        <ui_id>1c2b0ad8-de86-4d65-9520-d1e5794f358e</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTU/jMBT8K5XP3ShpaVV6Q+0ircSCBIgLC5Zjv4Alxwm2U+hW/e/7nDhpKSwqUg+LtD3V78Oemc70dkWkIFNyBCJOjpMxHybD4SCOB5OjJB0P02QghgwgIX2iWQ44aYAXRuB5wVTlC6vVzABzIGgS8coY0G69xr6QtlRseRPGsMIfpRLYJ9Pbuz4pmcEbHRgyXe209oWkWAoKRy9bTLsY3bL0Z1HwKkdcVLbFs7A5D53ejzl2cMnDSeI+gRcHWgACyZiy0Cc504K5wizJ1JkKC0haXGi17CYepXYN0Zy9WPkbXz6K/VwGyIwHEbojDQI15WzOHLvCm7mrTKdXITnYRhMBGauUm23XmoGL0slCNyuOpardLlSV6/NGEdJdsPV7VBZBQOl5euQNrezqsXi+bEGeSl1LEiiqgjPVnZhzRqaV83BWBBTUGuesLKV+oKUpFrJeRih59KDwEGWqeMY3rXzQEeMed4SqsugU6/O6fMOM9CR+4jW4vO4Tu7QzxazdUEEN6VPlkTTEAgVaq1BLQGsn+GVuZOlO8KkFBODrfjB9PPjQYbAxVO11u2V6A09YcNR76VcVx0NhnTeIEffaWkPRHLbQrzvUGbYAdY9nF5a+jd4G5ZBXfy5xe+jRJu5UghL2HYFC4hzkyMkBbQR7Hbrr0OzdhGaXu4MFLxnH9ed//P7d+KWjj+zGjzfu2rpzE8EXOohHk/HxhOK/PfqfxuELBoGGEL1N13deXNcjvctu5HMp2QN2m5Lr2g7v02iDsls7297tnTeNEJDRwfIx+UrJCDS+fDT+Foi7P7rec7SGCQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ada2ef4dc367835092bd3adc05013181"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=1da2ef4dc367835092bd3adc0501313d^sys_idNOT IN61a2ef4dc367835092bd3adc05013195"/>
+    <sys_hub_sub_flow_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <comment/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <generation_source/>
+        <order>12</order>
+        <parent_ui_id>57647ef7-efe1-49d9-be22-ce055d4dbe81</parent_ui_id>
+        <show_stages>false</show_stages>
+        <subflow display_value="EcoTravel Request Assignment Routing">00cba3f4c367035092bd3adc050131f2</subflow>
+        <subflow_inputs>H4sIAAAAAAAA/5WSUWvbMBDHv8rQs2PkOG6bvI20gcG2Qtv1pRRzls6JQJZcWUqThXz3nWKTmrWw9cn47n93//udng5MSbZgXIgK83om8otLnhd8Pq1kDlLwgmd5xjlLmIEGSYnCegdb1KXDl4Cdp6+wTpJiCzpEyeGwdAgeZZmlIjiHxh+PlJeqazXsHwcZRcRGaUl5tnh6TlgLjmZ4dGxx+Cv1vyY1VKhJeiPsw8nll7veJX0Hl//ew+/bqHBYIxkQOIS+D73vRnEqiHazhOHOo5FIPmvQHSasASPBW7dnC+8CBYiJvDV6f1ZslPE9hwZ2nfpNQ/NpMpq7YLtyyouri/lV2fstefnOOBuVlAPjjxCQrr4GD/dkR/jgzjewSmDXc5ZYQ9B+OY71gtvWK2v6Eg+V/oQ7YXVozM+eOzsPGb2D0JFzbCPAiGTgU99v7OuZ9kqZE+shqa0APZIiOLFZKdTxpUDbOkvPkVqD905VwcdtDiyoh/fH7YMfnRc1NuSobKihMusydlUnF7RUk641/aS1tq/kvlNrk4KIlFI6PKQril+fwo/gVET2g9pQcZz4yyjC8y2aLQDltIbLScH5fDKTWT6ZV5JPcjkvMgnVTNDTPias23dLDV33BpKWKF9CxNBjHQCW/Z1iiXCq9V/J1BYHVsfnP6cM0av0AwAA</subflow_inputs>
+        <sys_class_name>sys_hub_sub_flow_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>61a2ef4dc367835092bd3adc05013195</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:40</sys_updated_on>
+        <ui_id>6af5766d-cf99-492e-924e-81a3a60912d4</ui_id>
+        <updation_source/>
+        <wait_for_completion>true</wait_for_completion>
+    </sys_hub_sub_flow_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=1da2ef4dc367835092bd3adc0501313d^sys_idNOT IN29a2ef4dc367835092bd3adc0501317d,61a2ef4dc367835092bd3adc0501317f,a1a2ef4dc367835092bd3adc05013178,a5a2ef4dc367835092bd3adc0501317a,e9a2ef4dc367835092bd3adc05013175,eda2ef4dc367835092bd3adc0501317b"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">960f1270c3ebcf1092bd3adc0501318f</block>
+        <comment/>
+        <connected_to>012f9f4e-7240-41a3-bd4c-50d827feaeb4</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>29a2ef4dc367835092bd3adc0501317d</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:40</sys_updated_on>
+        <ui_id>b66dbf76-aa0e-4af3-86d9-f9df57f6e44a</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">1c3ebbfcc3e7035092bd3adc0501319c</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>61a2ef4dc367835092bd3adc0501317f</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:41</sys_updated_on>
+        <ui_id>57647ef7-efe1-49d9-be22-ce055d4dbe81</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1V0W6bMBT9lcnPBBlI0pC3KlWlSd0qrVVftgpdbNNYM5hhkzRD+fddY0KiNtNWrY97w8e+1+cc3yM6oltbt9bc60tj5FNFll8fAyIrh+F3RyooBVkSpisurdRV1gMB2YBq3QZ+cmlqBbuHI8LWUvFGDN1qaLDGioYsuxdbkmNBQaGIUhaxJJ4nMaXxYhrl8ySPYp6AgAQbKsiFwqOrA40PNz0S/Jaf3dUON7aR1dOwvhm63B1A3XDHKqIBEc9WVFwgnwKUEQEpoeJgdbMbkUYAv63UEVjLynrBJTwb+RMvjGczd7AQKJENbozLbHDKw8UVWEAqLbNtMxqnJRPGm8NFAa2yq1PMH7itnVRfYiFXh2qt2rL67B0hY4OTh2kNkhC1U+qoDzqKu7XefjmwvJZV78qwqTQDNa7Aond5ax2fjgglSmyUlVDX6GhWN3oj+2LkUoZPChdhofQWL3XTFQJzxEM0FsJrxK96+AEa6VR8wjZY7GnmYCTL+knEdmiTIPuAmJ1ZKTDmKBLdzX60jqKXPIjLvD+uhDWytpd480YMOvbB68E+memu43MaTXN2MUmLtJhMU0YnCxbRCQ5mdJEnySLNFyGyRb2gMmPBiv3+W0tpwj2Kg/QqGO/V9m3pSmFWzCI6O5+u6fxcus7k6o2Riv8QKfeef5koSun/SP1zpKTJfBAGbf3l75ioRxcff+foNZMGqd077OPhj+I2djhckp1CW918d6KO2P4XEJxgk5sGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">854816b0c3abcf1092bd3adc0501316b</block>
+        <comment/>
+        <connected_to>012f9f4e-7240-41a3-bd4c-50d827feaeb4</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>a1a2ef4dc367835092bd3adc05013178</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:40</sys_updated_on>
+        <ui_id>df41dd92-723b-4caf-b8ad-32849ad90c40</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0XPxtjOWra8jJJSKGwrrKEvWzHXkpyIyZKmjySeyX/flT+S0BT21ce9WUf3Xp1zfGR3RAdvgndLfe2cWCky//KUEKEihs8dUdBwMidUKya80IokZAMyRKzrFpaD56zMUxqs5cqn3oJyRltfNppl+/3XkGUz5mEnsJEJZyS0j3/bT9dCMiwbSBqwyM1zS+bdsy3BcHydQZ2/ozmdFVezIsuKt2/y6mpW5QWbAYccB0qouMTSxYm6FwT71kTIeSvUalx/GFsfJlBbFqkUWUL4znPFOJKoQTqekAYUA69tS+beBgRQN7tXsj1UrIXyOI3E2p0TP3iclGWxsuaoi/Jh97AsRzMHuL4BD0glUB/sWErXWlDuBkcYryFIvzjFhoJ706vsWzxUcurWMjTq02AGOQyY3h0iwSEJbqLSyH0UUj+s9fbzxPJWqN6VcVNqCvKwAo/eVcFHPh3hkjc4qGzAGHS0NFZvRN+MXJp0JXGR1lJv8dCY1BRoJJ6isZDeIn7Tw49gRVTxEcdgM2bBlY5aYSZt/eFknxDXuoUE544a0dzye4gMB8WjtnKwJ7b0g67x4A0fZeyT8ztS9sDxoty5iyUm+P35FTjZedVwFy+F+2LI7HnEJ75/kvP8Fzkfkd8K+uXl/5z/c84jzQqcoGX/9cZx8VPzikF/ioEeDj2YTYVDbsuI3U3/jLjRYqIEPYW22n6Lqo7Y/idaYieofQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">69c85a78c36bcf1092bd3adc0501311b</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id>df41dd92-723b-4caf-b8ad-32849ad90c40</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>a5a2ef4dc367835092bd3adc0501317a</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:40</sys_updated_on>
+        <ui_id>699321f9-eaf3-40b4-8f9c-2602c0377f92</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0HPxthxE9a8jC6lUNhWWENftmKuZTkWlSVPH0k8k/++K38koQlsZX3cm3V079U5x0d2S5SztbNmpW6M4WtJFt+fA8Klx/C5JRIqRhaEKplzy5UkAdmAcB5r26VmYFmexiF1WjNpQws7nlIBxuz3P1wUJXkmgL6kHb7ltkxpCa4omNM4KeemFtA8vdtAWnKRY18vowaN7C3TZNG+2uI5nncNs2IWRzOaTOfJNIqmH67ibJ5k8TRPgF3NcaCAjAksXZ7ov2CJbWoPGau5XA/rz0Pr4wgqnXsq0yggbGeZzBmSKEAYFpAKZA5W6YYsrHYIoBH5gxTNoaLk0uI04mt3hv9iflIU+cqCoS7K+t3DMh3c7eHiFiwgFUet00MpLRWnzPSO5KwAJ+zyFOsLHupOZddiIRNjtxKukl97M8hhwPgyEXEGSbDaK/XcByHFY6m230aWd1x2rgybQlEQhxVY9C5z1vNpCROswkFpBXWNjqa1VhveNSOXKlwLXISFUFs81Gc5BOqJh2gshHeI33bwE2juVXzBMcyHhpvUUM3rUVt3ONkHxDRm6ZN31Ijmpj+dZ9grHrSlvT2+pRt0gwdv2CBjH5zforQDjlfp3kw++VhPVhjrj+c342z/bUEvIijiaxpfDjokl4I+6fN7HveR+1syH/8h8wPyV6Gfzf5n/p8z72lmYDhNu289jvOfnXcM/bMPd3/owWzKDXJbeex+/MP4jQYTxekptFX6xas6YvvfvYKWm6sGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">b1919a3cc32bcf1092bd3adc050131a7</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>e9a2ef4dc367835092bd3adc05013175</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:40</sys_updated_on>
+        <ui_id>012f9f4e-7240-41a3-bd4c-50d827feaeb4</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0XPxthxE9a8jJISKGwrrKUvWzHXkpyIyZKnj6SeyX/flT+SbAlsbfe4N+vcr3Ouj+yWaO9q7+yDvrZWrBSZf3mKiFABw+eWKKg4mROqFRNOaEUisgHpA9a2C8PBcZanMfXGcOViZ0DZWhuXV5olu91XnyQZK6VYrR2WMmFrCc3j6zvQtZAME3uiNRjk57gh8/a3kGA44Aqm5TRNpjSbzLJJkkzeXabFLCvSCcuAX86woYSCS0xdHCk8I9o1dYCsM0KthvOHofR+BLVhgcokiQh/dlwxjiRKkJZHpALFwGnTkLkzHgFUzu6UbPYZa6EcdiMh99mKHzx0SpKQWXLURXkf3R/zYZ09XN6AA6TiqfNmSKVrLSi3/UYYL8FLtzjG+oS7ulPZlTgo5Fitpa/Up34ZZN9gfHuIeIskeB2UBu6DkPJ+rbefR5ZLobqtDEGpKcj9CRzurvAu8GkJl7zCRnkFdY0bzWujN6IrRi5VvJJ4iEuptzg0uDUGGojHuFiIl4jfdPAjGBFUfMQ2WIxesLmlRtSjtm442UXENnYhwdqDRlxu/t0Hhr3iQVveryeUdI2ucfCGDzJ20ek9yTvgcFlu7cWy8/D702vwS+xlBi8TKNMrmp43OGTnDH7R+/bU5iPnl3g9/YPXB+SvzD6d/vf6m70eaBZgBc27rzi2C5+bf2j2p2Dqfuh+2VRY5PYQsNvx3xECDTpK0GNoq823oOqA7X4ClsgJXYUGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">0daa523cc36bcf1092bd3adc05013170</block>
+        <comment/>
+        <connected_to>699321f9-eaf3-40b4-8f9c-2602c0377f92</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Processing">1da2ef4dc367835092bd3adc0501313d</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <parent_ui_id>df41dd92-723b-4caf-b8ad-32849ad90c40</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>eda2ef4dc367835092bd3adc0501317b</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:40</sys_updated_on>
+        <ui_id>ee75ed54-3c84-486c-b981-118614885fc5</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=1da2ef4dc367835092bd3adc0501313d"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=1da2ef4dc367835092bd3adc0501313d"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_1da2ef4dc367835092bd3adc0501313d</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>11a2ef4dc367835092bd3adc05013151</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 07:56:13</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_1da2ef4dc367835092bd3adc0501313d</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:13</sys_created_on>
+        <sys_id>21a2ef4dc367835092bd3adc0501315d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 07:56:13</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_1da2ef4dc367835092bd3adc0501313d"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_1da2ef4dc367835092bd3adc0501313d"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>a9f09a70c36bcf1092bd3adc05013104</sys_id>
+        <latest_snapshot>1da2ef4dc367835092bd3adc0501313d</latest_snapshot>
+        <compiler_build>glide-australia-02-11-2026__patch3-05-25-2026_06-12-2026_1106.zip</compiler_build>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=a9f09a70c36bcf1092bd3adc05013104^sys_idNOT INb9a2ef4dc367835092bd3adc050131dd"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_flow_trigger_plan","id":"b9a2ef4dc367835092bd3adc050131dd","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
+        <plan_id>a9f09a70c36bcf1092bd3adc05013104</plan_id>
+        <snapshot>ca51bf01c32b835092bd3adc05013104</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 07:56:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b9a2ef4dc367835092bd3adc050131dd</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 08:51:42</sys_updated_on>
+        <trigger display_value="">de5fafc9c3e7835092bd3adc0501318f</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=a9f09a70c36bcf1092bd3adc05013104"/>
+</record_update>

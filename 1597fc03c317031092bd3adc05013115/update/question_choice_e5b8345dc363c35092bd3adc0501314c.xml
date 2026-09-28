@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>500</order>
+        <published_ref/>
+        <question display_value="Destination">46b770d9c363c35092bd3adc05013131</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 14:12:14</sys_created_on>
+        <sys_id>e5b8345dc363c35092bd3adc0501314c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Paris</sys_name>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name>question_choice_e5b8345dc363c35092bd3adc0501314c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 14:12:14</sys_updated_on>
+        <text>Paris</text>
+        <value>paris</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=e5b8345dc363c35092bd3adc0501314c"/>
+</record_update>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Create EcoTravel Travel Request">82bd6055c323c35092bd3adc050131da</sc_cat_item>
+        <sc_category display_value="Travel &amp; Mobility">489074d9c323c35092bd3adc05013148</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 14:57:13</sys_created_on>
+        <sys_id>28038dd1c3e3c35092bd3adc0501310a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Travel &amp; Mobility.Create EcoTravel Travel Request</sys_name>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name>sc_cat_item_category_28038dd1c3e3c35092bd3adc0501310a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 14:57:13</sys_updated_on>
+    </sc_cat_item_category>
+</record_update>

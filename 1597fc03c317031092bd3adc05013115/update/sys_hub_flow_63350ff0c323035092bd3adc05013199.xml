@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=425571000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Routes Standard and NSSR requests to the Eco Travel Group and assigns them to the correct fulfiller.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>ecotravel_request_assignment_routing</internal_name>
+        <label_cache>[{"name":"{{static.235cb789c36b835092bd3adc050131b4}}","label":"EcoTravel NSSR Approval Group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","usedInstances":{"cbd13b25-af2a-4313-9093-8272b43f2c39":["approval_conditions"]}},{"name":"subflow.ecotravel_request_record","label":"Input➛EcoTravel Request Record","reference":"x_2058698_ecotra_0_ecotravel_request","reference_display":"EcoTravel Request","type":"reference","base_type":"reference","column_name":"","usedInstances":{"717374f1-22a7-4c3f-9717-527c22800eac":["record"],"9ae50a6a-6589-4a6b-90ae-a28929420886":["record"],"cbd13b25-af2a-4313-9093-8272b43f2c39":["record"],"a68e3857-5454-4738-b6de-c56860c908fb":["record"],"7eb3a01f-31f1-4c4f-9def-c25f4a21da08":["record"],"f3c11110-288d-4b51-9018-d3292cf11555":["record"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5aed2fa7-5009-4d13-9bd0-3d951dab4c00","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.ecotravel_request_record.request_type","label":"Input➛EcoTravel Request Record➛Request Type","reference":"","reference_display":"Request Type","type":"choice","base_type":"choice","parent_table_name":"x_2058698_ecotra_0_ecotravel_request","column_name":"request_type","choices":[{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Standard"}},"sequence":0.0,"label":"Standard","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Standard","missing":false,"value":"standard"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"NSSR"}},"sequence":1.0,"label":"NSSR","selected":false,"used":false,"image":"","reference":false,"rawLabel":"NSSR","missing":false,"value":"nssr"}],"usedInstances":{"ed1acfc9-8ab8-4d5c-896e-67225541e478":["condition"],"d6999cb3-5732-40fa-88cf-2908e0105f08":["condition"]}}]</label_cache>
+        <master_snapshot>00cba3f4c367035092bd3adc050131f2</master_snapshot>
+        <master_snapshot_digest/>
+        <name>EcoTravel Request Assignment Routing</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 11:09:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>63350ff0c323035092bd3adc05013199</sys_id>
+        <sys_mod_count>71</sys_mod_count>
+        <sys_name>EcoTravel Request Assignment Routing</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name>sys_hub_flow_63350ff0c323035092bd3adc05013199</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-28 09:22:09</sys_updated_on>
+        <type>subflow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>f3acd0eac3274f5092bd3adc05013126</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=63350ff0c323035092bd3adc05013199"/>
+    <sys_variable_value action="delete_multiple" query="document_key=63350ff0c323035092bd3adc05013199"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=63350ff0c323035092bd3adc05013199"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=63350ff0c323035092bd3adc05013199^sys_idNOT IN6b350ff0c323035092bd3adc0501319a"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>63350ff0c323035092bd3adc05013199</id>
+        <name>EcoTravel Request Assignment Routing</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 11:09:16</sys_created_on>
+        <sys_id>6b350ff0c323035092bd3adc0501319a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-23 11:09:16</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=6b350ff0c323035092bd3adc0501319a"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=63350ff0c323035092bd3adc05013199^sys_idNOT INa8e54774c323035092bd3adc05013192"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=5aed2fa7-5009-4d13-9bd0-3d951dab4c00</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_2058698_ecotra_0_ecotravel_request</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>ecotravel_request_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>EcoTravel Request Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="EcoTravel Request Assignment Routing">63350ff0c323035092bd3adc05013199</model>
+        <model_id>63350ff0c323035092bd3adc05013199</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_63350ff0c323035092bd3adc05013199</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference display_value="" name="x_2058698_ecotra_0_ecotravel_request">x_2058698_ecotra_0_ecotravel_request</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 11:12:04</sys_created_on>
+        <sys_id>a8e54774c323035092bd3adc05013192</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-23 13:54:05</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a8e54774c323035092bd3adc05013192"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=63350ff0c323035092bd3adc05013199"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=63350ff0c323035092bd3adc05013199"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=63350ff0c323035092bd3adc05013199"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=63350ff0c323035092bd3adc05013199^sys_idNOT IN5ea7cff0c323035092bd3adc050131f4,6c84c05dc3ab835092bd3adc05013143"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EcoTravel Request Assignment Routing">63350ff0c323035092bd3adc05013199</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>ed1acfc9-8ab8-4d5c-896e-67225541e478</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 11:19:50</sys_created_on>
+        <sys_id>5ea7cff0c323035092bd3adc050131f4</sys_id>
+        <sys_mod_count>24</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-28 09:57:45</sys_updated_on>
+        <ui_id>9ae50a6a-6589-4a6b-90ae-a28929420886</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXU/bMBT9K5Wfo8pJ2q7p20THNImBBIiXlUWOfVssOR/YTqGr+t934zhpBwwViYchLW/3yz7n+p6bH1siBZmREQgaJuGEx2EcR5RG01GYTeIsjETMAEISkILlgJkaeKkF2mum6sax3Zo6W6ryYYgRq9kaVKrhvgZj0zZ5t8N0IU2l2ObGV6GH30klNBRk9uM2IBXTeIEFTWbbJ6FjESqWgcLUyw7iU8h2UzW2KHmdQ2FT2TnPfOXcRwbf5hjBogZOSAMCjxYKAQhkyZSBgOSsEMyWekNmVtfo0MDERaE2fcadLGxLNGePRv7Cm0e0yVsCMuO+Cb2Z+ga17uWcWXaFJ3Nb675fpeRg2p4IWLJa2ZNDX5twUVlZFm2JZZnqqktV58V52xHSH3DwHrVBEFA1PBvkLa3l1V35cNmBPJWFa4mnqErOVG8xa7XMatvA2RJQ4Hqcs6qSxSqtdLmWrhih5MOVQmPYjA3eaeSqGDLe4B5iV9nwFP1z575hWjYkvuMxWLwLiNmYE8WM2VPBHqb3dYOkJeYppK4LrgWpm4SmmGtZ2c941Ro88F3gNUCjVycM9gPlRt8caMBYZmFRUxqL6CdiQ+CO/EqXddX6t4tOAgsyW5AvvBxcO7EMvrokEiza41x4wpJkFH/iPI5iGo9pEmUIQnA6pmEcThKXjp3AET4y/wUNfhDUb9sTR7xitydOJShhXnhWvycs5MjcQto+85+r4toHBzc+2G+Ld1sX4YS67//S+HeXRjZ+bdx4sp+ugzP3i+Mxjeh4OkmmafvzTGn67C/6XLgoQ6/Cyz7lbSo5Anankms3Di/T6ITy1Hd2WDs4bwNeION308f0IynD0/jw0vibIG5/A24SeQRLCgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=5ea7cff0c323035092bd3adc050131f4"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EcoTravel Request Assignment Routing">63350ff0c323035092bd3adc05013199</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>d6999cb3-5732-40fa-88cf-2908e0105f08</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 10:24:10</sys_created_on>
+        <sys_id>6c84c05dc3ab835092bd3adc05013143</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-28 09:57:45</sys_updated_on>
+        <ui_id>f3c11110-288d-4b51-9018-d3292cf11555</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTU/jMBD9K5XPUeUkbbfpDdFltRILEiAulI0ce1osOR/YTqFb9b/vxHFCBYgtEpdqc/PMG/u9sd/kbkukIDMyAkHDJJzwOIzjiNJoOgqzSZyFkYgZQEgCUrAcEKmBl1rges1U3QS2W1NnS1U+DTFjNVuDSjU81mBs2oJ3O4QLaSrFNre+CiP8QSqhoSCzu/uAVEzjARY0mW1fpQ5lqFgGCqFXHcXXlO2matai5HUOhU1lFzz3lXOfGfycYwaLGjohDQg8WygEIJElUwYCkrNCMFvqDZlZXWNAAxOXhdr0iAdZ2FZozp6N/IMnj2iDWwIq474J/TL1DWrDyzmz7Bp35rbWfb9KycG0PRGwZLWyp/uxFnBZWVkWbYllmeqqS1XnxUXbEdJvsHcftUESUDU6G+atrOX1Q/l01ZE8k4VriZeoSs5Uv2LWapnVtqGzJaDA9ThnVSWLVVrpci1dMVLJhyuFi2HzbPBMI1fFkPGG9xC7yoZnGJ+78C3TshHxC7fB4l1AzMacKmbMixTsYfpYN0xaYV5C6rrgWpC6l9AUcy0re4JHrcET3wXeA9n4oxfGk5cHtbfniw+e04iOp5NkmrY+SGn6xhBvffCdlzcOMrjqIZ8zxgG0O2PcuOfwvgzvjTex8/3awUWb8M4Yf5kzpsfkDC/j6K3xL0PQ6MORu/eSnAfMnhmMZRYWNaWxiH4jI6TrJK90WVdtfLvovLAgs0VjhIF3wg8HIsGi3c6lJyxJRvE3zuMopvGYJlGGJASnYxrG4SRxcNSPM/1A/Ds/pSNh/bn5cMAtdvPhTIIS5p1r7YYD5KjcQtpe86sB4ZODW5/sf59fNiXCCXXfEc2K/+Yvev8XZlr3kUsKAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6c84c05dc3ab835092bd3adc05013143"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=63350ff0c323035092bd3adc05013199"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=63350ff0c323035092bd3adc05013199^sys_idNOT IN027b8370c363035092bd3adc05013182,68e54774c323035092bd3adc050131c0"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">467b8370c363035092bd3adc05013181</block>
+        <comment/>
+        <connected_to>ed1acfc9-8ab8-4d5c-896e-67225541e478</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Assignment Routing">63350ff0c323035092bd3adc05013199</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 11:36:28</sys_created_on>
+        <sys_id>027b8370c363035092bd3adc05013182</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-28 09:22:07</sys_updated_on>
+        <ui_id>d6999cb3-5732-40fa-88cf-2908e0105f08</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTWvbQBD9K2bPRkhyE1rfQksg0CZgh1zaIEarkb10tavshxPX+L93Rh+OqV1aSumpJ2nezrx5M/uknbAxtDH4e3vlvVoZMf/8OBXKMEbvO2GgQTEX0ppKBWWNmIoN6MjYbudjWWv7nKC0wcEGdeHwKaIP9JTWVckYhm2L+/2XmKazynjviKVSvtWwffgrZHKtdOVwkN+CI9UBnZjvfjji2kJDiZp6LoNTZkXlqqKoTqHO3slMzvLLWZ6m+ds3WXk5K7O8mgFCRnlj4fujbZxZEDchyI/0JJ615OlU4EtAUyH1q0F7nIoGTAXBuq2YBxcJcAjVndHbQ8ZamUBsgnNfvPqGzJSmnFkjDSaxPz2ExbDaHpZrqyTetZ22DglQ6qFGWh0bc9uPwJeCNUQdxkshJHriw5ZFs4xBU71c2+fF2PBamW7A4VBbCfoQQaA1lDGg59tAjQ0RFQ20LS2naJ3dqK6YtDTJSlOQsA2oKfsxAcnCE9oRJNeEf+jgB3CKp/hENMgGUL7w0ql2nK1rLvbdVoqnyHr6+YZJin4ZlNCXXVGbDQ6i99NT3xcd8Gr+Gz+5XS4Xk8mid+Wpo89k/AOb5udsOvnYIadmHaf6iWOzXzh2QH7LshcX/x177FiWWYJXsuj+tkTH3/8fW/aRrdm38L2HKpTKk5J7xm7GPzofbOnWlTyGnq37yjO8YvvvvhDEMBsGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">64e54774c323035092bd3adc050131bf</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Assignment Routing">63350ff0c323035092bd3adc05013199</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 11:12:04</sys_created_on>
+        <sys_id>68e54774c323035092bd3adc050131c0</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-28 09:22:07</sys_updated_on>
+        <ui_id>ed1acfc9-8ab8-4d5c-896e-67225541e478</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1U22obMRD9FaNns+x6Y9P4LaQEAm0DcchLGxatNGuLaqWNLnZc43/vzF4cUzuklDz2yaujuZwzc6wdszE0MfgHe+W9Who2//40ZsoQht87ZngNbM6ENVIFZQ0bszXXkbDdzsey0naTgLDB8TXowsFzBB/wV1gnk+EYtg3s9z9imubSB24kdxIrSeUbzbePH1ZQrJSWDnoZDXfIPoBj890fV5RfaF6Cxr6L4JRZYrqSeLrk02qapVORT2b5JE0nny6ycpaX2UTmHC5mGDckXh9N5cygqAlCfiiPAojLJB0zeAlgJGC/imsPY1aThmDdls2Diwg44PLO6O0hYqVMwGqMYl+8+gVUKU0psgIUJqC7PRyLfrwdLFZWCbhrWm4tEnip+xxhdazNt04CLQYqHnUYFoNI9FgPGiJNNHpO1WJlN/dDwxtlWoH9pbaC68OJBxxDGQN42gZoqLFQUfOmweEUjbNr1SYjlzpZajwkZAVsSr5MuCDiCc6IJzeIf27hR+4UqfiKZTAZN+gLL5xqBm1tc7Zvp1I8R+LT6euVFN0wMKBLu8I2a+hJ78en/i9a4PVPcOtHi95/o/vOnKfGPh/0EWatUl5llyI7b1aenzPr6EuLnFp20PaGb7N3fNsjf2Xc6fS/b499SzRL7pUo2rcXy9Er8M/GfSKDdi185yEJQnlk8kDY7fC+08UWt67EMbSx7idpeMX2vwGfomOtKQYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=63350ff0c323035092bd3adc05013199"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=63350ff0c323035092bd3adc05013199"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>ecotravel_request_record</element>
+        <help/>
+        <hint/>
+        <label>EcoTravel Request Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_63350ff0c323035092bd3adc05013199</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 11:12:04</sys_created_on>
+        <sys_id>a8e54774c323035092bd3adc05013199</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-23 11:12:04</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_63350ff0c323035092bd3adc05013199"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_63350ff0c323035092bd3adc05013199"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Routes Standard and NSSR requests to the Eco Travel Group and assigns them to the correct fulfiller.</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>ecotravel_request_assignment_routing</internal_name>
+        <label_cache>[{"name":"{{static.235cb789c36b835092bd3adc050131b4}}","label":"EcoTravel NSSR Approval Group","reference":"sys_user_group","reference_display":"Group","type":"reference","base_type":"reference","usedInstances":{"cbd13b25-af2a-4313-9093-8272b43f2c39":["approval_conditions"]}},{"name":"subflow.ecotravel_request_record","label":"Input➛EcoTravel Request Record","reference":"x_2058698_ecotra_0_ecotravel_request","reference_display":"EcoTravel Request","type":"reference","base_type":"reference","column_name":"","usedInstances":{"717374f1-22a7-4c3f-9717-527c22800eac":["record"],"9ae50a6a-6589-4a6b-90ae-a28929420886":["record"],"cbd13b25-af2a-4313-9093-8272b43f2c39":["record"],"a68e3857-5454-4738-b6de-c56860c908fb":["record"],"7eb3a01f-31f1-4c4f-9def-c25f4a21da08":["record"],"f3c11110-288d-4b51-9018-d3292cf11555":["record"]},"attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5aed2fa7-5009-4d13-9bd0-3d951dab4c00","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.ecotravel_request_record.request_type","label":"Input➛EcoTravel Request Record➛Request Type","reference":"","reference_display":"Request Type","type":"choice","base_type":"choice","parent_table_name":"x_2058698_ecotra_0_ecotravel_request","column_name":"request_type","choices":[{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"Standard"}},"sequence":0.0,"label":"Standard","selected":false,"used":false,"image":"","reference":false,"rawLabel":"Standard","missing":false,"value":"standard"},{"parameters":{"name":"x_2058698_ecotra_0_ecotravel_request","dependent_values":[""],"dependent_values_map":{"":"NSSR"}},"sequence":1.0,"label":"NSSR","selected":false,"used":false,"image":"","reference":false,"rawLabel":"NSSR","missing":false,"value":"nssr"}],"usedInstances":{"ed1acfc9-8ab8-4d5c-896e-67225541e478":["condition"],"d6999cb3-5732-40fa-88cf-2908e0105f08":["condition"]}}]</label_cache>
+        <master>true</master>
+        <name>EcoTravel Request Assignment Routing</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="EcoTravel Request Assignment Routing">63350ff0c323035092bd3adc05013199</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 13:57:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>00cba3f4c367035092bd3adc050131f2</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-28 09:22:09</sys_updated_on>
+        <type>subflow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=00cba3f4c367035092bd3adc050131f2"/>
+    <sys_variable_value action="delete_multiple" query="document_key=00cba3f4c367035092bd3adc050131f2"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=00cba3f4c367035092bd3adc050131f2"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=00cba3f4c367035092bd3adc050131f2^sys_idNOT IN84cba3f4c367035092bd3adc050131ff"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>00cba3f4c367035092bd3adc050131f2</id>
+        <name>EcoTravel Request Assignment Routing</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 13:57:31</sys_created_on>
+        <sys_id>84cba3f4c367035092bd3adc050131ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-23 13:57:31</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=84cba3f4c367035092bd3adc050131ff"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=00cba3f4c367035092bd3adc050131f2^sys_idNOT IN0ccbe3f4c367035092bd3adc05013100"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=5aed2fa7-5009-4d13-9bd0-3d951dab4c00</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>x_2058698_ecotra_0_ecotravel_request</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>ecotravel_request_record</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>EcoTravel Request Record</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="EcoTravel Request Assignment Routing">00cba3f4c367035092bd3adc050131f2</model>
+        <model_id>00cba3f4c367035092bd3adc050131f2</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_00cba3f4c367035092bd3adc050131f2</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference display_value="" name="x_2058698_ecotra_0_ecotravel_request">x_2058698_ecotra_0_ecotravel_request</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 13:57:31</sys_created_on>
+        <sys_id>0ccbe3f4c367035092bd3adc05013100</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-23 13:57:31</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=0ccbe3f4c367035092bd3adc05013100"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=00cba3f4c367035092bd3adc050131f2"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=00cba3f4c367035092bd3adc050131f2"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=00cba3f4c367035092bd3adc050131f2"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=00cba3f4c367035092bd3adc050131f2^sys_idNOT INd8cbe3f4c367035092bd3adc05013122,f6b48c5dc3ab835092bd3adc05013124"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EcoTravel Request Assignment Routing">00cba3f4c367035092bd3adc050131f2</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>ed1acfc9-8ab8-4d5c-896e-67225541e478</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 13:57:31</sys_created_on>
+        <sys_id>d8cbe3f4c367035092bd3adc05013122</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 09:05:17</sys_updated_on>
+        <ui_id>9ae50a6a-6589-4a6b-90ae-a28929420886</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXU/bMBT9K5Wfo8pJ2q7p20THNImBBIiXlUWOfVssOR/YTqGr+t934zhpBwwViYchLW/3yz7n+p6bH1siBZmREQgaJuGEx2EcR5RG01GYTeIsjETMAEISkILlgJkaeKkF2mum6sax3Zo6W6ryYYgRq9kaVKrhvgZj0zZ5t8N0IU2l2ObGV6GH30klNBRk9uM2IBXTeIEFTWbbJ6FjESqWgcLUyw7iU8h2UzW2KHmdQ2FT2TnPfOXcRwbf5hjBogZOSAMCjxYKAQhkyZSBgOSsEMyWekNmVtfo0MDERaE2fcadLGxLNGePRv7Cm0e0yVsCMuO+Cb2Z+ga17uWcWXaFJ3Nb675fpeRg2p4IWLJa2ZNDX5twUVlZFm2JZZnqqktV58V52xHSH3DwHrVBEFA1PBvkLa3l1V35cNmBPJWFa4mnqErOVG8xa7XMatvA2RJQ4Hqcs6qSxSqtdLmWrhih5MOVQmPYjA3eaeSqGDLe4B5iV9nwFP1z575hWjYkvuMxWLwLiNmYE8WM2VPBHqb3dYOkJeYppK4LrgWpm4SmmGtZ2c941Ro88F3gNUCjVycM9gPlRt8caMBYZmFRUxqL6CdiQ+CO/EqXddX6t4tOAgsyW5AvvBxcO7EMvrokEiza41x4wpJkFH/iPI5iGo9pEmUIQnA6pmEcThKXjp3AET4y/wUNfhDUb9sTR7xitydOJShhXnhWvycs5MjcQto+85+r4toHBzc+2G+Ld1sX4YS67//S+HeXRjZ+bdx4sp+ugzP3i+Mxjeh4OkmmafvzTGn67C/6XLgoQ6/Cyz7lbSo5Anankms3Di/T6ITy1Hd2WDs4bwNeION308f0IynD0/jw0vibIG5/A24SeQRLCgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d8cbe3f4c367035092bd3adc05013122"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="EcoTravel Request Assignment Routing">00cba3f4c367035092bd3adc050131f2</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>d6999cb3-5732-40fa-88cf-2908e0105f08</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 10:25:08</sys_created_on>
+        <sys_id>f6b48c5dc3ab835092bd3adc05013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 10:25:08</sys_updated_on>
+        <ui_id>f3c11110-288d-4b51-9018-d3292cf11555</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVTU/jMBD9K5XPUeUkbbfpDdFltRILEiAulI0ce1osOR/YTqFb9b/vxHFCBYgtEpdqc/PMG/u9sd/kbkukIDMyAkHDJJzwOIzjiNJoOgqzSZyFkYgZQEgCUrAcEKmBl1rges1U3QS2W1NnS1U+DTFjNVuDSjU81mBs2oJ3O4QLaSrFNre+CiP8QSqhoSCzu/uAVEzjARY0mW1fpQ5lqFgGCqFXHcXXlO2matai5HUOhU1lFzz3lXOfGfycYwaLGjohDQg8WygEIJElUwYCkrNCMFvqDZlZXWNAAxOXhdr0iAdZ2FZozp6N/IMnj2iDWwIq474J/TL1DWrDyzmz7Bp35rbWfb9KycG0PRGwZLWyp/uxFnBZWVkWbYllmeqqS1XnxUXbEdJvsHcftUESUDU6G+atrOX1Q/l01ZE8k4VriZeoSs5Uv2LWapnVtqGzJaDA9ThnVSWLVVrpci1dMVLJhyuFi2HzbPBMI1fFkPGG9xC7yoZnGJ+78C3TshHxC7fB4l1AzMacKmbMixTsYfpYN0xaYV5C6rrgWpC6l9AUcy0re4JHrcET3wXeA9n4oxfGk5cHtbfniw+e04iOp5NkmrY+SGn6xhBvffCdlzcOMrjqIZ8zxgG0O2PcuOfwvgzvjTex8/3awUWb8M4Yf5kzpsfkDC/j6K3xL0PQ6MORu/eSnAfMnhmMZRYWNaWxiH4jI6TrJK90WVdtfLvovLAgs0VjhIF3wg8HIsGi3c6lJyxJRvE3zuMopvGYJlGGJASnYxrG4SRxcNSPM/1A/Ds/pSNh/bn5cMAtdvPhTIIS5p1r7YYD5KjcQtpe86sB4ZODW5/sf59fNiXCCXXfEc2K/+Yvev8XZlr3kUsKAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f6b48c5dc3ab835092bd3adc05013124"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=00cba3f4c367035092bd3adc050131f2"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=00cba3f4c367035092bd3adc050131f2^sys_idNOT INd0cbe3f4c367035092bd3adc0501311e,d4cbe3f4c367035092bd3adc05013120"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">64e54774c323035092bd3adc050131bf</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Assignment Routing">00cba3f4c367035092bd3adc050131f2</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 13:57:31</sys_created_on>
+        <sys_id>d0cbe3f4c367035092bd3adc0501311e</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-28 09:22:09</sys_updated_on>
+        <ui_id>ed1acfc9-8ab8-4d5c-896e-67225541e478</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0HPxthxE9a8lZRCYVuhKX3ZirmW5ERMllx9JPVM/vuu/JGEJbCV9XFPjo7uvTrn+Mhpifau9s4+6RtrxVqRxbeXiAgVMPzdEgUVJwtCtWLCCa1IRLYgfcDa1vqilHoXc6qdgS2XueGvnluHT6oNi8ela2q+33/3SZIx60AxMAwnMWFrCc3zhw2kGyGZ4YOMGgyyd9yQRfvblmB43jXMylmazGg2nWfTJJl+ukqLeVakU5YBv5rjQAkFl1i6PNF/wZJAByHrjFDrYf15aF2NIPIPVKZJRPib44pxJFGCtDwiVZDgtGnIwhmPgOHAHpRsDhUboRxOI6H2zYqfPExKklBZctRFeb97WOaDuz1c3oIDpOKp82YopRstKLe9I4yX4KVbnmJ9wUPdqexaHBRy7NbSV+prbwY5DBhfJiLeIgleB6WB+yCkXG307nFkeSdU58qwKTUFeViBQ+8K7wKflnDJKxyUV1DX6GheG70VXTNyqeK1xEUc4oOHhizHQAPxGI2F+A7x2w5+BiOCii84BpsxCza31Ih61NYdTvYRsY1dSrD2qBHNzV99YNgrHrTlvT2hpRt0gwdv+SBjH53forwDjlfp3k5WQ4onj33Ez6/H5aL3Rb5MoEyvaXo58pBdivykT/J58EcV70l/+of0D8hfxX82+5/+f05/oFmAFTTvvvo4LnyAPjD+LyHm/aEHs6mwyO0pYPfjf03YaDBRgp5CO21+BFVHbP8LnXU9jrUGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">467b8370c363035092bd3adc05013181</block>
+        <comment/>
+        <connected_to>ed1acfc9-8ab8-4d5c-896e-67225541e478</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="EcoTravel Request Assignment Routing">00cba3f4c367035092bd3adc050131f2</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 13:57:31</sys_created_on>
+        <sys_id>d4cbe3f4c367035092bd3adc05013120</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-28 09:22:09</sys_updated_on>
+        <ui_id>d6999cb3-5732-40fa-88cf-2908e0105f08</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0HPxtjOWra8lZRCYWshKX3ZirmWrxMxWXL1kdYL+e+78kcSlsA2lsc9OTq6uvec4yNny7R3jXf2Sd9YK1aKzb6+REyogNHvLVNQI5sxrlUpnNCKRWwD0gdsu7W+qKR+i5FrZ2CDMjf46tE6enJtynhcurbB3e6bT5Jpqaw11KUUtpHQPl+kGV8LWRoc6DdgiLVDw2bbX7ZESbOqBKr0E0/5NLueZkmSffyQFtfTIs3KKSCk1FBCgZJK50e6z1gRqBBknRFqNaw/D0eXI0jcA5UsiRi+O1QlEokKpMWI1aBKcNq0bOaMJ8AglI9KtvuKtVCOurFQ+27FDwydkiRUVki6OPa7+2U+ONvD1S04ICqeO2+GUr7WgqPtHSmxAi/d/BjrCx6bTmV3xEEhx9Na+lo99GawfYPxRRLiLZHAJigN3Ach1XKt3xYjyzuhOleGTak5yP0KHHlXeBf4bBlKrKlRXkPTkKN5Y/RGdIeJSx2vJC3iEB0aGjIcAw/EYzIW4jvCbzv4GYwIKr5QGwyhETa33Ihm1NYNZ7uI2dbOJVh70Ejm5q8+MOwVD9ry3p5wpGt0Q4M3OMjYRae3J++AwxW6t5OH5XIxmSz6bJ/eizMVFw17di7skz7Dp5Ef+f9N7tPf5H5A/ij4V1f/c//PuQ80C7CC5913ntqFT88Fg/8SAt4P3ZvNhSVuTwG7H/9dwkZLiRL8GHrT5ntQdcB2PwFTr1mipwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=00cba3f4c367035092bd3adc050131f2"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=00cba3f4c367035092bd3adc050131f2"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>ecotravel_request_record</element>
+        <help/>
+        <hint/>
+        <label>EcoTravel Request Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_00cba3f4c367035092bd3adc050131f2</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 13:57:31</sys_created_on>
+        <sys_id>14cbe3f4c367035092bd3adc05013112</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-23 13:57:31</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_00cba3f4c367035092bd3adc050131f2"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_00cba3f4c367035092bd3adc050131f2"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>63350ff0c323035092bd3adc05013199</sys_id>
+        <latest_snapshot>00cba3f4c367035092bd3adc050131f2</latest_snapshot>
+        <compiler_build>glide-australia-02-11-2026__patch3-05-25-2026_06-12-2026_1106.zip</compiler_build>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=63350ff0c323035092bd3adc05013199"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=63350ff0c323035092bd3adc05013199^sys_idNOT IN9b456378c327035092bd3adc050131ae"/>
+    <sys_flow_subflow_plan action="INSERT_OR_UPDATE">
+        <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_flow_subflow_plan","id":"9b456378c327035092bd3adc050131ae","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
+        <plan_id display_value="EcoTravel Request Assignment Routing">63350ff0c323035092bd3adc05013199</plan_id>
+        <snapshot>2cd4e8aec3674f5092bd3adc05013189</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-23 13:29:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9b456378c327035092bd3adc050131ae</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-28 09:22:09</sys_updated_on>
+    </sys_flow_subflow_plan>
+</record_update>

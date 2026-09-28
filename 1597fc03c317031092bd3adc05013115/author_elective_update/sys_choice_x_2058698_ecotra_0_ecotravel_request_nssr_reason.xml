@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="nssr_reason" table="x_2058698_ecotra_0_ecotravel_request" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>nssr_reason</element>
+            <name>x_2058698_ecotra_0_ecotravel_request</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-09-23 07:40:51</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>nssr_reason</sys_name>
+            <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+            <sys_update_name>sys_choice_x_2058698_ecotra_0_ecotravel_request_nssr_reason</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-09-23 07:40:51</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>nssr_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Flight</label>
+            <language>en</language>
+            <name>x_2058698_ecotra_0_ecotravel_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-09-23 07:40:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-09-23 07:40:51</sys_updated_on>
+            <value>flight</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>nssr_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Black Taxi</label>
+            <language>en</language>
+            <name>x_2058698_ecotra_0_ecotravel_request</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-09-23 07:40:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-09-23 07:40:51</sys_updated_on>
+            <value>black_taxi</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>nssr_reason</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Standard Travel</label>
+            <language>en</language>
+            <name>x_2058698_ecotra_0_ecotravel_request</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-09-23 08:05:14</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-09-23 08:05:14</sys_updated_on>
+            <value>standard_travel</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

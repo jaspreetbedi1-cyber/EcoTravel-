@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="enforce_dot_walk_cross_scope_access=true" db_object_id="0e6289c7c357031092bd3adc050131f1" extends="task" label="EcoTravel Request" max_length="40" name="x_2058698_ecotra_0_ecotravel_request" type="collection">
+        <element label="Total Distance (in km)" max_length="255" name="total_distance_in_km" type="integer"/>
+        <element label="Distance" max_length="40" name="distance" type="integer"/>
+        <element choice="1" label="Destination" mandatory="true" max_length="40" name="destination" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Brussels" sequence="4" value="brussels"/>
+                <element inactive_on_update="false" label="Leipzig" sequence="6" value="Leipzig"/>
+                <element inactive="true" inactive_on_update="true" label="Bangalore" sequence="1" value="bangalore"/>
+                <element inactive_on_update="false" label="Munich" sequence="3" value="munich"/>
+                <element inactive_on_update="false" label="Paris" sequence="5" value="Paris"/>
+                <element inactive_on_update="false" label="Hamburg" sequence="2" value="hamburg"/>
+                <element inactive_on_update="false" label="Berlin" sequence="0" value="berlin"/>
+            </choice>
+        </element>
+        <element active="false" default="0" label="Earned Eco-Points" max_length="255" name="earned_eco_points" type="integer"/>
+        <element choice="3" label="NSSR Category" max_length="255" name="nssr_category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="None" sequence="0" value="none"/>
+                <element inactive_on_update="false" label="Black Taxi (with chauffeur)" sequence="2" value="black_taxi_with_chauffeur"/>
+                <element inactive_on_update="false" label="Flight" sequence="1" value="flight"/>
+            </choice>
+        </element>
+        <element choice="3" label="NSSR Approval" max_length="40" name="nssr_approval" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Requested" sequence="0" value="requested"/>
+                <element inactive_on_update="false" label="Approved" sequence="1" value="approved"/>
+                <element inactive_on_update="false" label="Rejected" sequence="2" value="rejected"/>
+            </choice>
+        </element>
+        <element label="Flight Justificaton" max_length="4000" name="flight_justificaton" type="string"/>
+        <element label="Traveler" max_length="32" name="traveler" reference="sys_user" type="reference"/>
+        <element choice="3" default="Economy Class" label="Flight Class" max_length="255" name="flight_class" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Economy Class" sequence="0" value="economy_class"/>
+                <element inactive_on_update="false" label="First Class" sequence="2" value="first_class"/>
+                <element inactive_on_update="false" label="Business Class" sequence="1" value="business_class"/>
+            </choice>
+        </element>
+        <element label="Department" max_length="32" name="department" reference="cmn_department" type="reference"/>
+        <element label="Departure Date" mandatory="true" max_length="40" name="departure_date" type="glide_date"/>
+        <element choice="3" default="Standard" display="true" label="Request Type" max_length="40" name="request_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="NSSR" sequence="1" value="nssr"/>
+                <element inactive_on_update="false" label="Standard" sequence="0" value="standard"/>
+            </choice>
+        </element>
+        <element label="Return Date" mandatory="true" max_length="255" name="end_date" type="glide_date"/>
+        <element label="Estimated" max_length="40" name="estimated" type="string"/>
+        <element choice="3" label="NSSR Reason" max_length="40" name="nssr_reason" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Flight" sequence="0" value="flight"/>
+                <element inactive_on_update="false" label="Black Taxi" sequence="1" value="black_taxi"/>
+                <element inactive_on_update="false" label="Standard Travel" sequence="2" value="standard_travel"/>
+            </choice>
+        </element>
+        <element choice="3" label="Taxi Class" max_length="40" name="taxi_class" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Black Taxi (with chauffeur)" sequence="2" value="black_taxi_with_chauffeur"/>
+                <element inactive_on_update="false" label="Uber" sequence="0" value="uber"/>
+                <element inactive_on_update="false" label="Taxi" sequence="1" value="taxi"/>
+            </choice>
+        </element>
+        <element choice="3" default="Train" label="Transport mode" max_length="40" name="transport_mod0" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="EV Car" sequence="2" value="car"/>
+                <element inactive_on_update="false" label="Flight" sequence="1" value="flight"/>
+                <element inactive_on_update="false" label="Train" sequence="0" value="train"/>
+                <element inactive_on_update="false" label="Pool Car (non EV)" sequence="3" value="other"/>
+                <element inactive_on_update="false" label="Taxi" sequence="4" value="taxi"/>
+            </choice>
+        </element>
+        <element choice="3" label="Travel Class" max_length="40" name="travel_class" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Not Applicable" sequence="3" value="not_applicable"/>
+                <element inactive_on_update="false" label="First" sequence="2" value="first"/>
+                <element inactive_on_update="false" label="Economy" sequence="0" value="economy"/>
+                <element inactive_on_update="false" label="Business" sequence="1" value="business"/>
+            </choice>
+        </element>
+        <element label="Requested for" max_length="32" name="requested_for" reference="sys_user" type="reference"/>
+        <element label="Justification" max_length="4000" name="nssr_justfication" type="string"/>
+    </element>
+</database>

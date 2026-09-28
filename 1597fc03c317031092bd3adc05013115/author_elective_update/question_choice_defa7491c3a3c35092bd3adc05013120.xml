@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="DELETE">
+        <inactive>false</inactive>
+        <order>300</order>
+        <published_ref/>
+        <question display_value="Flight class">8ed8745dc363c35092bd3adc05013186</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 14:22:07</sys_created_on>
+        <sys_id>defa7491c3a3c35092bd3adc05013120</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>First class</sys_name>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_update_name>question_choice_defa7491c3a3c35092bd3adc05013120</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 14:22:07</sys_updated_on>
+        <text>First class</text>
+        <value>first_class</value>
+    </question_choice>
+    <fx_price action="DELETE" query="id=defa7491c3a3c35092bd3adc05013120"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</application>
+        <file_path/>
+        <instance_id>4c99b3c31baabdd0ba5ceb9b2d4bcb39</instance_id>
+        <instance_name>dev219966</instance_name>
+        <name>question_choice_defa7491c3a3c35092bd3adc05013120</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice"><question_choice action="INSERT_OR_UPDATE"><inactive>false</inactive><order>300</order><published_ref/><question display_value="Flight class">8ed8745dc363c35092bd3adc05013186</question><sys_class_name>question_choice</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-09-24 14:22:07</sys_created_on><sys_id>defa7491c3a3c35092bd3adc05013120</sys_id><sys_mod_count>0</sys_mod_count><sys_name>First class</sys_name><sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package><sys_policy/><sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope><sys_update_name>question_choice_defa7491c3a3c35092bd3adc05013120</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-09-24 14:22:07</sys_updated_on><text>First class</text><value>first_class</value></question_choice><fx_price action="delete_multiple" query="id=defa7491c3a3c35092bd3adc05013120"/></record_update>]]></payload>
+        <payload_hash>-219946007</payload_hash>
+        <record_name>First class</record_name>
+        <reverted_from/>
+        <source>9d97fc03c317031092bd3adc05013136</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-24 14:22:08</sys_created_on>
+        <sys_id>6afa7491c3a3c35092bd3adc05013160</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a0d3cb8f940000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-24 14:22:08</sys_updated_on>
+        <type>Question Choice</type>
+        <update_guid>26fa7491a5a3c350a25981bd097dfd5f</update_guid>
+        <update_guid_history>26fa7491a5a3c350a25981bd097dfd5f:-219946007</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="First class">68f64c2ac3634f5092bd3adc050131c5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-09-28 07:47:12</sys_created_on>
+        <sys_db_object display_value="" name="question_choice">question_choice</sys_db_object>
+        <sys_id>1dd4a6d1d9b845008477790bd430ecc4</sys_id>
+        <sys_metadata>defa7491c3a3c35092bd3adc05013120</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>First class</sys_name>
+        <sys_package display_value="EcoTravel &amp;amp; Mobility Hub" source="x_2058698_ecotra_0">1597fc03c317031092bd3adc05013115</sys_package>
+        <sys_parent display_value="Flight class">8ed8745dc363c35092bd3adc05013186</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="EcoTravel &amp;amp; Mobility Hub">1597fc03c317031092bd3adc05013115</sys_scope>
+        <sys_scope_delete display_value="">1f0d1d67178048768df7da44bc8beb84</sys_scope_delete>
+        <sys_update_name>question_choice_defa7491c3a3c35092bd3adc05013120</sys_update_name>
+        <sys_update_version display_value="question_choice_defa7491c3a3c35092bd3adc05013120">6afa7491c3a3c35092bd3adc05013160</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-09-28 07:47:12</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
